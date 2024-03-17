@@ -23,7 +23,7 @@ const About = () => {
           </p>
         </div>
       </Parallax>
-      <div className="mt-10 mx-4 flex flex-col lg:flex-row gap-20">
+      <div className="mt-10 mx-4 flex flex-col items-center gap-20">
         <div className="aboutImg">
           <img src={about2} alt="" className="bigImg rounded-md" />
           <img src={about3} alt="" className="smImg" />
