@@ -1,7 +1,8 @@
 import { Button, Footer } from "flowbite-react";
 import logo from "../../../public/logo.png";
-import { FaGooglePlay } from "react-icons/fa6";
+import { FaDribbble, FaGooglePlay, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { IoLogoApple } from "react-icons/io5";
+import { FaFacebook } from "react-icons/fa";
 const Footers = () => {
   return (
     <div className="mt-10 ">
@@ -55,9 +56,14 @@ const Footers = () => {
           </div>
           <Footer.Divider />
           <div className="w-full sm:flex sm:items-center sm:justify-between">
-            <Footer.Copyright href="#" by="ApartmentHub™" year={2024} />
-            <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center"></div>
+          <Footer.Copyright href="#" by="ApartmentHub™" year={2024} />
+          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+            <Footer.Icon href="#" icon={FaFacebook} />
+            <Footer.Icon href="#" icon={FaInstagram} />
+            <Footer.Icon href="#" icon={FaTwitter} />
+            <Footer.Icon href="#" icon={FaDribbble} />
           </div>
+        </div>
         </div>
       </Footer>
       <div>
