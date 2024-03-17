@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "title": "The Dream Apartment",
+      "subtitle":"Apartment Hub",
+      "description": "Enjoy unmatched sophistication in every aspect as you upgrade your way of living. Our buildings redefine luxury living, with their sleek modern designs and timeless classics. Discover a world where creativity and aesthetics collide and skillfully created spaces are transformed.",
+
+      "image": "https://i.ibb.co/ZVf7xB0/slide2.jpg",
+      "button": "Apartment"
+    },
+    {
+        "id": 2,
+        "title": " An Elegant Universe",
+        "subtitle":"In Dhaka",
+        "description": "Our fundamental conviction is to create spaces that uplift, enthrall, and inspire. Discover the splendor of our areas and go on an adventure where visions become architectural realities. Welcome to a unique world where living is an art form and creativity meets craftsmanship.",
+        "image": "https://i.ibb.co/GQQwf7t/slide1.jpg",
+        "button": "Book"
+    },
+    {
+        "id": 3,
+        "title": " An Orchestra of Styles",
+        "subtitle":"In Dhaka",
+        "description": "Enter a world where every little detail demonstrates our dedication to quality. Experience a symphony of style and substance. Fundamentally, we think that settings should be made to enthrall, inspire, and enhance",
+  
+        "image": "https://i.ibb.co/2cp0kLp/slide3.jpg",
+        "button": "Book"
+    }
+
+    
+   
+  ]
+  
