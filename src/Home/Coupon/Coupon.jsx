@@ -15,15 +15,16 @@ const Coupon = () => {
     };
     data();
   }, []);
-  const [copyValue, copy] = useCopyToClipboard();
+  const [copyValue, setCopy] = useCopyToClipboard();
 
   const handleCopy = () => {
-    copy(coupons);
+    setCopy(coupons);
     Swal.fire({
       title: "Copy Coupon",
       text: "",
       icon: "success",
     });
+    console.log(copyValue)
   };
   return (
     <>
