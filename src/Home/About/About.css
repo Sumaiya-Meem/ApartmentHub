@@ -1,0 +1,22 @@
+.aboutImg {
+    width: 600px;
+    height: 600px;
+    position: relative;
+
+}
+
+.aboutImg .bigImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.smImg {
+    position: absolute;
+    width: 200px;
+    width: 324px;
+    right: -74px;
+    bottom: -68px;
+    border-radius: 10px;
+    border: 7px solid white;
+}

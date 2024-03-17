@@ -1,5 +1,6 @@
 import Footers from "../Components/Footers/Footers";
 import Header from "../Components/Navbar/Header";
+import About from "./About/About";
 import Slider from "./Slider/Slider";
 
 const Home = () => {
@@ -7,7 +8,9 @@ const Home = () => {
         <div>
             <Header></Header>
             <Slider></Slider>
+            <About></About>
             <Footers></Footers>
+        
             
         </div>
     );

@@ -55,7 +55,7 @@ const Footers = () => {
           </div>
           <Footer.Divider />
           <div className="w-full sm:flex sm:items-center sm:justify-between">
-            <Footer.Copyright href="#" by="TrendZen™" year={2024} />
+            <Footer.Copyright href="#" by="ApartmentHub™" year={2024} />
             <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center"></div>
           </div>
         </div>
