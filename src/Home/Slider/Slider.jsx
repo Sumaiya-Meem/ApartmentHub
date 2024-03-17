@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Button, Carousel } from "flowbite-react";
+import { Carousel } from "flowbite-react";
 import { useEffect, useState } from "react";
 import "./slider.css"
 const Slider = () => {
