@@ -14,9 +14,10 @@
     }
 }
 
-@media screen and (min-width: 441px) and (max-width: 670px) {
+@media screen and (min-width: 441px) and (max-width: 768px) {
     .couponCon {
         grid-template-columns: repeat(2, 180px);
+     
     }
 }
 
