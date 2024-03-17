@@ -1,0 +1,27 @@
+
+.couponCon {
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    width: fit-content;
+    margin: 55px auto 0 auto;
+    gap: 20px;
+}
+
+
+@media screen and (max-width: 440px) {
+    .couponCon {
+        grid-template-columns: repeat(1, 300px);
+    }
+}
+
+@media screen and (min-width: 441px) and (max-width: 670px) {
+    .couponCon {
+        grid-template-columns: repeat(2, 180px);
+    }
+}
+
+
+
+
+
+
