@@ -6,6 +6,8 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import UserPrivate from "../privateRoutes/UserPrivate";
 import LayoutDA from "../Dashboard/Layout/LayoutDA";
+import AdminPrivate from "../privateRoutes/AdminPrivate";
+import AdminProfile from "../Dashboard/AdminProfile/AdminProfile";
 
 
   
@@ -35,7 +37,11 @@ import LayoutDA from "../Dashboard/Layout/LayoutDA";
         path:'/dashboard',
         element:<UserPrivate><LayoutDA></LayoutDA></UserPrivate>,
         children: [
-           
+          {
+            path:'admin-profile',
+            element:<AdminPrivate><AdminProfile></AdminProfile></AdminPrivate>
+
+        },
         ]
     }
 

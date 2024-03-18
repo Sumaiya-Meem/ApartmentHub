@@ -7,7 +7,7 @@ import { IoPeopleSharp } from "react-icons/io5";
 import { PiGitPullRequestBold } from "react-icons/pi";
 import { RiCoupon2Fill } from "react-icons/ri"
 import useUserRole from "../../Hooks/useUserRole"
-
+import logo from "../../../public/logo.png";
 
 const NavbarDA = () => {
     const { userRole } = useUserRole();
@@ -17,6 +17,7 @@ const NavbarDA = () => {
     return (
         <div  className="lg:min-h-screen h-full  bg-blue-950">
             <div className="flex-1 pt-7 pb-3 md:pb-16 px-2 mx-2">
+                <img src={logo} alt=""  className='h-[100px] w-[100px] mx-auto'/>
             </div>
             {
                 role === 'admin' ?

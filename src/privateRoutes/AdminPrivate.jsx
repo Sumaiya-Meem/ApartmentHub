@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { ContextProvider } from "../auth/AuthProvider";
-import useUserRole from "../hooks/useUserRole";
+import useUserRole from "../Hooks/useUserRole"
+import {ContextProvider} from "../Context/AuthProvider"
 
 
 // eslint-disable-next-line react/prop-types
