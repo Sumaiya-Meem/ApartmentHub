@@ -21,7 +21,7 @@ import Register from "../Register/Register";
           element: <Login></Login>, 
         },
         {
-          path: "/register",
+          path: "/registration",
           element: <Register></Register>, 
         },
       

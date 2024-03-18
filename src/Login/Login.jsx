@@ -1,121 +1,120 @@
-import { Button, Card, Checkbox, Label, TextInput } from 'flowbite-react';
-import { useContext } from 'react';
-import { AuthContext } from '../../Context/AuthProvider';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import { FcGoogle } from "react-icons/fc";
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
+import {Link , useNavigate} from 'react-router-dom'
+import toast from 'react-hot-toast';
+import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { ContextProvider } from "../Context/AuthProvider";
 
+import bg from "../../public/bg1.avif";
 const Login = () => {
+    const {signInUser , signInGoogle} = useContext(ContextProvider);
+    const axiosPublic = useAxiosPublic();
+    const navigate = useNavigate()
 
-    const {signIn, signInWithGoogle} =useContext(AuthContext)
-    const location =useLocation()
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
 
-    const navigate =useNavigate()
-    const from =location.state?.from?.pathname || "/";
+    const onSubmit = (data) => {
 
-    const handleLogin = e =>{
-        e.preventDefault();
-
-        const form = e.target;
-
-        const email= form.email.value;
-        const password= form.password.value;
-        console.log(email,password)
-        
-        signIn(email,password)
-        .then(res=>{
-            const user =res.user;
-            console.log("Login User: ",user);
-            Swal.fire({
-                title: "Login Successfully",
-                showClass: {
-                  popup: `
-                    animate__animated
-                    animate__fadeInUp
-                    animate__faster
-                  `
-                },
-                hideClass: {
-                  popup: `
-                    animate__animated
-                    animate__fadeOutDown
-                    animate__faster
-                  `
-                }
-              });
-            navigate(from,{replace:true})
+        signInUser(data.email, data.password)
+        .then(result=> {
+            console.log(result.user);
+            toast.success('sign in successfully')
+            navigate('/');
         })
+        .catch(error=> {
+            console.log(error.message);
+            toast.error(error.message);
+        })
+        
+    };
 
+    const handleGoogle = () => {
+
+          signInGoogle()
+          .then(result=> {
+            if(result.user){
+                axiosPublic.post('/user', {email: result.user.email, name: result.user.displayName, role: 'user'})
+                .then(res=> {
+                     if(res.data){
+                        toast.success('sign in successfully')
+                        navigate('/')
+                     }
+                }) 
+            }
+           
+          })
+          .catch(error=> {
+            console.log(error);
+            toast.error(error.message);
+          })
     }
-
-    const handleGoogle = () =>{
-      signInWithGoogle()
-      .then(res=>{
-        console.log(res.data)
-        Swal.fire({
-          title: "Login Successfully",
-          showClass: {
-            popup: `
-              animate__animated
-              animate__fadeInUp
-              animate__faster
-            `
-          },
-          hideClass: {
-            popup: `
-              animate__animated
-              animate__fadeOutDown
-              animate__faster
-            `
-          }
-        });
-        navigate(from,{replace:true})
-
-      })
-      .catch(error=>{
-        console.log(error)
-      })
-    }
+    const backgroundImageStyle = {
+        backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "100vh",
+      };
+    
     return (
-        <div className='flex gap-4'>
-            
-  <div className=''>
-  <Card className="max-w-lg">
-    <h1 className='mt-10 text-center text-3xl text-purple-500 font-semibold'>Login</h1>
-      <form className="flex flex-col gap-4 " onSubmit={handleLogin}>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="email1" value="Your email" />
-          </div>
-          <TextInput id="email1" type="email" name="email" placeholder="name@flowbite.com" required />
-        </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="password1" value="Your password" />
-          </div>
-          <TextInput id="password1" name="password" type="password" required />
-        </div>
-        <div className="flex items-center gap-2">
-          <Checkbox id="remember" />
-          <Label htmlFor="remember">Remember me</Label>
-        </div>
-        <Button type="submit">Login</Button>
-        <p>Do not have an account? <Link to="/register">
-        <span className='text-blue-500'>SignUp</span> here
-        </Link></p>
-        <div className='flex justify-center'>
-        <Button outline pill className='hover:bg-slate-200' onClick={handleGoogle}>
-        <FcGoogle className='text-2xl text-blue-500 mr-4 ' />
-        <span>Continue With Google</span>
-      </Button>
-          </div>
-      </form>
-    </Card>
-  </div>
+        <div className="flex justify-between" style={backgroundImageStyle}>
+            <div className="lg:w-[50%] mx-auto w-full h-screen flex justify-center items-center">
 
-   
+                <form className="bg-white lg:w-[70%]  p-8 shadow-lg rounded-lg" onSubmit={handleSubmit(onSubmit)}>
+                    <h2 className="text-2xl font-bold mb-4">Login</h2>
 
 
+                    <div className="mb-4">
+                        <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+                            Email
+                        </label>
+                        <input
+                            type="text"
+                            id="email"
+                            {...register('email', {
+                                required: 'Email is required',
+                            })}
+                            className={`w-full p-2 border block rounded ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                        />
+                        {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
+                    </div>
+
+                    <div className="mb-4">
+                        <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            {...register('password', { required: 'Password is required' })}
+                            className={`w-full p-2 block border rounded ${errors.password ? 'border-red-500' : 'border-gray-300'}`}
+                        />
+                        {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
+                    </div>
+
+                   <div className="flex flex-col items-center gap-2 justify-between">
+                   <button
+                        type="submit"
+                        className=" w-[45%] border border-blue-600 hover:text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+                    >
+                        Login
+                    </button>
+                    <div><h1>OR</h1></div>
+                    <div onClick={handleGoogle}
+                        className="w-[45%] text-center border border-orange-600 hover:text-white px-4 py-2 rounded-full hover:bg-orange-600 focus:outline-none focus:shadow-outline-blue"
+                    >
+                      Login with  Google
+                    </div>
+
+                   </div>
+                   <h1 className="mt-5">Are You New Here? <Link className="text-blue-700 underline" to='/registration'>Registration</Link></h1>
+                </form>
+
+
+            </div>
+
+           
         </div>
     );
 };

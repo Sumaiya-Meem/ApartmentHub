@@ -1,20 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/logo.png";
-import {  Navbar } from "flowbite-react";
+import {  Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import { CiLogin } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
+import { useContext } from "react";
+import {  ContextProvider } from "../../Context/AuthProvider";
 
 // import "./header.css"
 const Header = () => {
-//   const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(ContextProvider);
   
 
-//   const handleLogout = () => {
-//     console.log("logout");
-//     logOut()
-//       .then(() => {})
-//       .catch((err) => console.log(err));
-//   };
+  const handleLogout = () => {
+    console.log("logout");
+    logOut()
+      .then(() => {})
+      .catch((err) => console.log(err));
+  };
 
   const navItem = (
     <>
@@ -26,6 +28,7 @@ const Header = () => {
       >
         Home
       </NavLink>
+     
      
     </>
   );
@@ -39,40 +42,32 @@ const Header = () => {
             <span className="text-[#bc0024]">A</span>partment<span className="text-[#bc0024]">H</span>ub
           </span>
         </Navbar.Brand>
-        {/* <div className="flex md:order-2">
-          {user ? (
+        <div className="flex md:order-2">
+          {user ? 
             <>
-              <Link to="">
-              <Dropdown
-                arrowIcon={false}
-                inline
-                label={
-                  <Avatar alt="User" img={person} rounded />
-                }
-              >
-                <Dropdown.Header>
-                  <span className="block text-sm">{user?.displayName}</span>
-                  <span className="block truncate text-sm font-medium">
-                    {user?.email}
-                  </span>
-                </Dropdown.Header>
-                <Dropdown.Item>
-                  <Link to="/dashboard">Dashboard</Link>
-                </Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Item>
-                  <Button color="" className="text-black" onClick={handleLogout}>
-                    <span className="mr-2 text-xl ">
-                      <IoIosLogOut></IoIosLogOut>
-                    </span>
-                    LogOut
-                  </Button>
-                </Dropdown.Item>
-              </Dropdown>
-              
-              </Link>
+            <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+                <Avatar alt="User settings" img={user?.photoURL} rounded />
+            }
+        >
+            <Dropdown.Header>
+                <span className="block text-sm">{ user?.displayName}</span>
+                <span className="block truncate text-sm font-medium">{user?.email}</span>
+            </Dropdown.Header>
+            <Dropdown.Item>
+                <Link to="/dashboard">Dashboard</Link>
+            </Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item>
+            <Button color="" className=''  onClick={handleLogout}>
+            <span className='mr-2 text-xl'><IoIosLogOut></IoIosLogOut></span> LogOut
+        </Button>
+            </Dropdown.Item>
+        </Dropdown> 
             </>
-          ) : (
+           : (
             <>
               <NavLink
                 to="/login"
@@ -92,7 +87,7 @@ const Header = () => {
           )}
 
           <Navbar.Toggle />
-        </div> */}
+        </div>
         <Navbar.Collapse>{navItem}</Navbar.Collapse>
       </Navbar>
     </div>
