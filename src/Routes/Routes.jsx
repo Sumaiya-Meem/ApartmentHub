@@ -7,6 +7,7 @@ import Register from "../Register/Register";
 import UserPrivate from "../privateRoutes/UserPrivate";
 import LayoutDA from "../Dashboard/Layout/LayoutDA";
 import AdminPrivate from "../privateRoutes/AdminPrivate";
+import MemberPrivate from "../privateRoutes/MemberPrivate";
 import AdminProfile from "../Dashboard/AdminProfile/AdminProfile";
 import MakeAnnounce from "../Dashboard/profiles/MakeAnnounce";
 import ManegeMember from "../Dashboard/profiles/ManegeMember";
@@ -15,6 +16,8 @@ import ManageCoupon from "../Dashboard/profiles/ManageCoupon";
 import Profile from "../Dashboard/profiles/Profile";
 import Announcement from "../Dashboard/profiles/Announcement";
 import Apartment from "../apartment/Apartment";
+import MemberProfile from "../Dashboard/profiles/MemberProfile";
+import PaymentForm from "../paymentPage/PaymentForm";
 
 
 
@@ -54,6 +57,16 @@ import Apartment from "../apartment/Apartment";
             element:<AdminPrivate><AdminProfile></AdminProfile></AdminPrivate>
 
         },
+        //member route
+        {
+          path:'member-profile',
+          element: <MemberPrivate><MemberProfile></MemberProfile></MemberPrivate>,
+          
+      },
+      {
+        path: 'make-payment',
+        element: <UserPrivate><PaymentForm></PaymentForm></UserPrivate>
+    },
         // user route
         {     
           path:'user-profile',

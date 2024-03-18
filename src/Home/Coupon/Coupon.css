@@ -1,7 +1,7 @@
 
 .couponCon {
     display: grid;
-    grid-template-columns: repeat(3, 180px);
+    grid-template-columns: repeat(3, 280px);
     width: fit-content;
     margin: 55px auto 0 auto;
     gap: 20px;

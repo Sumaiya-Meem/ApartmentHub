@@ -25,7 +25,7 @@ const Profile = () => {
                     </div>
                     <div className="flex items-center">
                         <FaMapMarkerAlt className="text-gray-500 mr-2" />
-                        <p className="text-gray-700">Jashore, Khulna</p>
+                        <p className="text-gray-700">Barishal,Bangladesh</p>
                     </div>
                 </div>
             </div>

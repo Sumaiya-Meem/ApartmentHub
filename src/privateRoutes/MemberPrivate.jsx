@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { ContextProvider } from "../auth/AuthProvider";
-import useUserRole from "../hooks/useUserRole";
+import { ContextProvider } from "../Context/AuthProvider";
+import useUserRole from "../Hooks/useUserRole";
 
 // eslint-disable-next-line react/prop-types
 const MemberPrivate = ({children}) => {
