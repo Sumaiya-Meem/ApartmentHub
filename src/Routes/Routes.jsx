@@ -9,6 +9,9 @@ import LayoutDA from "../Dashboard/Layout/LayoutDA";
 import AdminPrivate from "../privateRoutes/AdminPrivate";
 import AdminProfile from "../Dashboard/AdminProfile/AdminProfile";
 import MakeAnnounce from "../Dashboard/profiles/MakeAnnounce";
+import ManegeMember from "../Dashboard/profiles/ManegeMember";
+import Agreement from "../Dashboard/profiles/Agreement";
+import ManageCoupon from "../Dashboard/profiles/ManageCoupon";
 
 
   
@@ -46,7 +49,19 @@ import MakeAnnounce from "../Dashboard/profiles/MakeAnnounce";
         {
           path: 'make-announce',
           element: <AdminPrivate><MakeAnnounce></MakeAnnounce></AdminPrivate>
-      }
+      },
+      {
+        path: 'manage-member',
+        element: <AdminPrivate><ManegeMember></ManegeMember></AdminPrivate>
+    },
+    {
+      path: 'agreement',
+      element: <AdminPrivate><Agreement></Agreement></AdminPrivate>
+  }, 
+  {
+    path: 'manage-coupon',
+    element: <AdminPrivate><ManageCoupon></ManageCoupon></AdminPrivate>
+},
         ]
     }
 
