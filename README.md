@@ -1,8 +1,29 @@
-# React + Vite
+# Website Name: Apartment Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website Live link [Click here](https://apartmenthub-fb481.web.app/).
+## Features
+- Secure Payment Processing
+- Admin Dashboard
+- User Dashboard
+- Member Dashboard
+- Announcement System.
+- Coupon Management
+- Responsive All Device
+- Role based Dashboard
+- Location Map 
 
-Currently, two official plugins are available:
+## Frontend
+- React
+- Axios
+- Tanstack Query
+- React Form
+- Tailwind
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Backend
+- MongoDB
+- JSON Web Token (JWT)
+- Express JS
+- CORS
+
+## Authentication
+- Firebase
