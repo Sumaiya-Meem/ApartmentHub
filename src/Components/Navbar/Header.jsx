@@ -8,15 +8,16 @@ import {  ContextProvider } from "../../Context/AuthProvider";
 
 // import "./header.css"
 const Header = () => {
-  const { user, logOut } = useContext(ContextProvider);
-  
+  const { logOutUser, user } = useContext(ContextProvider);
+
+
 
   const handleLogout = () => {
-    console.log("logout");
-    logOut()
-      .then(() => {})
-      .catch((err) => console.log(err));
-  };
+      logOutUser()
+          .then(() => {
+              toast.success('sign out successfully')
+          })
+        }
 
   const navItem = (
     <>

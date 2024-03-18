@@ -43,7 +43,7 @@ const Registration = () => {
                      })
                      .then(()=> {
 
-                        axiosPublic.post('/user', {email: result?.user?.email, name: result?.user?.displayName, role: 'admin'})
+                        axiosPublic.post('/user', {email: result?.user?.email, name: result?.user?.displayName, role: 'user'})
                         .then(res=> {
                              if(res.data.acknowledged){
                                 toast.success('user create successfully!')

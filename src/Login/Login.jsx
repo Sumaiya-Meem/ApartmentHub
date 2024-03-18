@@ -102,7 +102,7 @@ const Login = () => {
                     </button>
                     <div><h1>OR</h1></div>
                     <div onClick={handleGoogle}
-                        className="w-[45%] text-center border border-orange-600 hover:text-white px-4 py-2 rounded-full hover:bg-orange-600 focus:outline-none focus:shadow-outline-blue"
+                        className="w-[45%] text-center border border-blue-600  px-4 py-2 rounded-full h"
                     >
                       Login with  Google
                     </div>
