@@ -1,10 +1,10 @@
 import { IoIosSend } from 'react-icons/io';
 import { useForm, Controller } from 'react-hook-form'
-import { ContextProvider } from '../../auth/AuthProvider';
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react';
-import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import { ContextProvider } from '../Context/AuthProvider';
+import useAxiosSecure from '../Hooks/useAxiosSecure';
 
 const PaymentForm = () => {
     const { handleSubmit, control } = useForm();

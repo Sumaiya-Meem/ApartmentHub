@@ -18,8 +18,8 @@ import Announcement from "../Dashboard/profiles/Announcement";
 import Apartment from "../apartment/Apartment";
 import MemberProfile from "../Dashboard/profiles/MemberProfile";
 import PaymentForm from "../paymentPage/PaymentForm";
-
-
+import Payment from "../paymentPage/Payment";
+import PaymentHistory from "../Dashboard/profiles/PaymentHistory";
 
   
   const router = createBrowserRouter([
@@ -67,6 +67,15 @@ import PaymentForm from "../paymentPage/PaymentForm";
         path: 'make-payment',
         element: <UserPrivate><PaymentForm></PaymentForm></UserPrivate>
     },
+    {
+      path: 'payment/:month',
+      element: <UserPrivate><Payment></Payment></UserPrivate>
+  },
+  {
+      path: 'payment-history',
+      element: <MemberPrivate><PaymentHistory></PaymentHistory></MemberPrivate>
+  },
+
         // user route
         {     
           path:'user-profile',
