@@ -29,6 +29,13 @@ import Register from "../Register/Register";
    
       ]
       },
+      {   
+        path:'/dashboard',
+        element:<UserPrivate><LayoutDA></LayoutDA></UserPrivate>,
+        children: [
+           
+        ]
+    }
 
    
   ]);
