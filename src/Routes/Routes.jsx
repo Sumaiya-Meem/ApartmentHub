@@ -12,6 +12,9 @@ import MakeAnnounce from "../Dashboard/profiles/MakeAnnounce";
 import ManegeMember from "../Dashboard/profiles/ManegeMember";
 import Agreement from "../Dashboard/profiles/Agreement";
 import ManageCoupon from "../Dashboard/profiles/ManageCoupon";
+import Profile from "../Dashboard/profiles/Profile";
+import Announcement from "../Dashboard/profiles/Announcement";
+
 
 
   
@@ -46,6 +49,20 @@ import ManageCoupon from "../Dashboard/profiles/ManageCoupon";
             element:<AdminPrivate><AdminProfile></AdminProfile></AdminPrivate>
 
         },
+        // user route
+        {     
+          path:'user-profile',
+          element: <UserPrivate><Profile></Profile></UserPrivate>, 
+      },
+      {
+        path:'/dashboard/',
+        element: <UserPrivate><Announcement></Announcement></UserPrivate>,
+        
+    },
+       
+        
+
+        // admin route
         {
           path: 'make-announce',
           element: <AdminPrivate><MakeAnnounce></MakeAnnounce></AdminPrivate>
