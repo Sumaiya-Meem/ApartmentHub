@@ -8,6 +8,7 @@ import { PiGitPullRequestBold } from "react-icons/pi";
 import { RiCoupon2Fill } from "react-icons/ri"
 import useUserRole from "../../Hooks/useUserRole"
 import logo from "../../../public/logo.png";
+import { CgProfile } from "react-icons/cg";
 
 const NavbarDA = () => {
     const { userRole } = useUserRole();
@@ -23,7 +24,7 @@ const NavbarDA = () => {
                 role === 'admin' ?
 
                     <>
-                        <NavLink  to='/dashboard/admin-profile'><div className='text-base items-center flex gap-1 py-2 lg:pl-10 md:pl-3 text-gray-200 border-y border-gray-600 uppercase font-semibold'><FaHome></FaHome> Admin profile</div></NavLink>
+                        <NavLink  to='/dashboard/admin-profile'><div className='text-base items-center flex gap-1 py-2 lg:pl-10 md:pl-3 text-gray-200 border-y border-gray-600 uppercase font-semibold'><CgProfile /> Admin profile</div></NavLink>
 
                         <NavLink to='/dashboard/make-announce'><div className='text-base items-center flex gap-1 py-2 lg:pl-10 md:pl-3 text-gray-200 border-b border-gray-600 uppercase font-semibold'><GrAnnounce></GrAnnounce> Make Announcement</div></NavLink>
 
@@ -32,6 +33,8 @@ const NavbarDA = () => {
                         <NavLink to='/dashboard/agreement'><div className='text-base items-center flex gap-1 py-2 lg:pl-10 md:pl-3 text-gray-200 border-b border-gray-600 uppercase font-semibold'><PiGitPullRequestBold></PiGitPullRequestBold>Agreement Request</div></NavLink>
 
                         <NavLink to='/dashboard/manage-coupon'><div className='text-base items-center flex gap-1 py-2 lg:pl-10 md:pl-3 text-gray-200 border-b border-gray-600 uppercase font-semibold'><RiCoupon2Fill></RiCoupon2Fill> Manage Coupons</div></NavLink>
+                        
+                        <NavLink to='/'><div className='text-base items-center flex gap-1 py-2 lg:pl-10 md:pl-3 text-gray-200 border-b border-gray-600 uppercase font-semibold'><FaHome /> Home</div></NavLink>
                     </>
 
 
