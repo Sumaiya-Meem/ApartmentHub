@@ -8,6 +8,7 @@ import UserPrivate from "../privateRoutes/UserPrivate";
 import LayoutDA from "../Dashboard/Layout/LayoutDA";
 import AdminPrivate from "../privateRoutes/AdminPrivate";
 import AdminProfile from "../Dashboard/AdminProfile/AdminProfile";
+import MakeAnnounce from "../Dashboard/profiles/MakeAnnounce";
 
 
   
@@ -42,6 +43,10 @@ import AdminProfile from "../Dashboard/AdminProfile/AdminProfile";
             element:<AdminPrivate><AdminProfile></AdminProfile></AdminPrivate>
 
         },
+        {
+          path: 'make-announce',
+          element: <AdminPrivate><MakeAnnounce></MakeAnnounce></AdminPrivate>
+      }
         ]
     }
 
