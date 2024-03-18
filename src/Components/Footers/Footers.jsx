@@ -15,7 +15,7 @@ const Footers = () => {
                 Apartment Hub
               </span>
             </div>
-            <div className="flex gap-10 sm:mt-2  ">
+            <div className="flex flex-col md:flex-row items-center  gap-10 sm:mt-2  ">
               <div>
                 <Footer.Title title="Address" />
                 <Footer.LinkGroup col>

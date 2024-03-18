@@ -14,6 +14,7 @@ import Agreement from "../Dashboard/profiles/Agreement";
 import ManageCoupon from "../Dashboard/profiles/ManageCoupon";
 import Profile from "../Dashboard/profiles/Profile";
 import Announcement from "../Dashboard/profiles/Announcement";
+import Apartment from "../apartment/Apartment";
 
 
 
@@ -27,6 +28,10 @@ import Announcement from "../Dashboard/profiles/Announcement";
           path: "/",
           element: <Home></Home>,
         },
+        {
+          path: 'apartment',
+          element: <Apartment></Apartment>
+      },
         {
           path: "/login",
           element: <Login></Login>, 

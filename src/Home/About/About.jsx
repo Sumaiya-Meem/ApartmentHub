@@ -24,7 +24,7 @@ const About = () => {
         </div>
       </Parallax>
       <div className="mt-10 mx-4 flex flex-col items-center gap-20">
-        <div className="aboutImg">
+        <div className="aboutImg hidden md:block">
           <img src={about2} alt="" className="bigImg rounded-md" />
           <img src={about3} alt="" className="smImg" />
         </div>
@@ -39,14 +39,14 @@ const About = () => {
           <h1 className="text-xl font-serif font-bold text-gray-800">
             Welcome to ApartmentHub
           </h1>
-          <p className="w-[600px] text-gray-700">
+          <p className="w-[350px] md:w-[600px] mx-auto  text-gray-700">
             Nestled in the vibrant neighborhood of Mirpur 10, ApartmentHub
             stands as a beacon of modern living. With its strategic location and
             contemporary design, ApartmentHub offers a seamless blend of
             comfort, convenience, and style.
           </p>
           <h1 className="text-xl font-serif font-bold text-gray-800">Your Modern Living Space</h1>
-          <p className="w-[600px] text-gray-700">
+          <p className="w-[350px] md:w-[600px] mx-auto  text-gray-700">
             Inaugurated in 2021, ApartmentHub offers 1000 meticulously designed
             apartments spread across its expansive 92,860 square meter
             structure. With its towering presence reaching 300 feet,
@@ -63,7 +63,7 @@ const About = () => {
           <h1 className="text-xl font-serif font-bold text-gray-800">
           Experience Luxury Living at ApartmentHub
           </h1>
-          <p className="w-[600px] text-gray-700">
+          <p className="w-[350px] md:w-[600px] mx-auto  text-gray-700">
           Discover the epitome of modern living at ApartmentHub. Whether you seek comfort, style, or convenience, ApartmentHub offers it all. Come, be a part of our thriving community
            and experience urban living like never before.
           </p>

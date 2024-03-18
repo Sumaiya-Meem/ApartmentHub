@@ -13,7 +13,7 @@ const AdminProfile = () => {
             <div className='mt-12 mx-3 md:mx-0'>
                 <div className="max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-lg">
                     <div className="relative">
-                        <div className="bg-blue-500 ">
+                        <div className="bg-blue-950 ">
                             <img className='relative mx-auto top-12 border-4 border-white rounded-full w-32 h-32' src={user?.photoURL} alt="" />
                         </div>
                     </div>

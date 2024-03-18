@@ -1,0 +1,59 @@
+[
+    {
+      "id": "1",
+      "apartmentImage": "https://i.ibb.co/SRGNBgF/a1.jpg",
+      "floorNo": 3,
+      "blockName": "A",
+      "apartmentNo": 103,
+      "rent": 1200
+    },
+    {
+      "id": "2",
+      "apartmentImage": "https://i.ibb.co/Qjy2pMx/a2.jpg",
+      "floorNo": 8,
+      "blockName": "B",
+      "apartmentNo": 145,
+      "rent": 1500
+    },
+    {
+      "id": "3",
+      "apartmentImage": "https://i.ibb.co/7kj1fxb/a3.jpg",
+      "floorNo": 5,
+      "blockName": "C",
+      "apartmentNo": 45,
+      "rent": 1100
+    },
+    {
+      "id": "4",
+      "apartmentImage": "https://i.ibb.co/5v266W2/a4.jpg",
+      "floorNo": 8,
+      "blockName": "A",
+      "apartmentNo": 120,
+      "rent": 1800
+    },
+    {
+      "id": "5",
+      "apartmentImage": "https://i.ibb.co/5KVG2dV/a5.jpg",
+      "floorNo": 4,
+      "blockName": "B",
+      "apartmentNo": 60,
+      "rent": 1300
+    },
+    {
+      "id": "6",
+      "apartmentImage": "https://i.ibb.co/N609Ksw/a6.jpg",
+      "floorNo": 6,
+      "blockName": "C",
+      "apartmentNo": 87,
+      "rent": 1600
+    },
+    {
+      "id": "7",
+      "apartmentImage": "https://i.ibb.co/zS9GG6m/a7.jpg",
+      "floorNo": 7,
+      "blockName": "A",
+      "apartmentNo": 102,
+      "rent": 1700
+    }
+  
+  ]

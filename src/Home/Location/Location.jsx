@@ -8,7 +8,7 @@ const Location = () => {
         <h1>Location</h1>
       </div>
       <div className="flex gap-6 flex-col lg:flex-row mx-2">
-        <div className="flex-1 w-[560px] lg:w-[600px] h-[400px] border-[2px] border-red-300 overflow-hidden">
+        <div className="flex-1 w-[400px] lg:w-[600px] h-[400px] border-[2px] border-red-300 overflow-hidden">
           <iframe
             className=""
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34729.086172303665!2d90.35134398263011!3d23.80275194324609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0d33532b3fb%3A0x2b27b0c01cb2bc0d!2sMirpur-10%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1710667307444!5m2!1sen!2sbd"

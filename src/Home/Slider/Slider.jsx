@@ -24,13 +24,13 @@ const Slider = () => {
             <>
               <div className="relative ">
                 <img src={slide.image} alt="" className="w-full h-[450px]" />
-                <div className="h-full  py-4  flex flex-col justify-center absolute left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
-                  <div className="pl-20 w-1/3">
-                    <h1 className="font-semibold font-serif  text-[50px] text-[#bc0022dd] ">
+                <div className="h-full  py-4   flex flex-col justify-center absolute left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
+                  <div className="pl-20 w-[80%] lg:w-2/3 ">
+                    <h1 className=" mb-1 lg:mb-6  font-semibold font-serif text-xl md:text-2xl lg:text-[50px] text-[#bc0022dd] ">
                       {slide.title}
                     </h1>
-                    <h3 className="text-[40px] text-white font-semibold font-serif">{slide.subtitle}</h3>
-                    <p className="text-sm text-[#ffffffba]">{slide.description}</p>
+                    <h3 className="mb-1 lg:mb-6 text-xl md:text-[25px] lg:text-[40px] text-white font-semibold font-serif">{slide.subtitle}</h3>
+                    <p className="mb-1 lg:mb-6 text-sm text-[#ffffffba]">{slide.description}</p>
                    <div className="w-[120px] flex items-center gap-2 bg-[#fff] p-2 mt-2 rounded-lg text-[#bc0022dd] ">
                     <span><FaLocationArrow></FaLocationArrow></span>
                    <button className="  font-bold">{slide.button}</button>

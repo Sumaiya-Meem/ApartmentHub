@@ -5,6 +5,7 @@ import { CiLogin } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
 import { useContext } from "react";
 import {  ContextProvider } from "../../Context/AuthProvider";
+import toast from "react-hot-toast";
 
 // import "./header.css"
 const Header = () => {
@@ -28,6 +29,15 @@ const Header = () => {
         }
       >
         Home
+      </NavLink>
+     
+      <NavLink
+        to="/apartment"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-[#bc0024] font-bold menu   " : "text-black"
+        }
+      >
+        Apartment
       </NavLink>
      
      
