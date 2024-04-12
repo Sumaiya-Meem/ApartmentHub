@@ -25,7 +25,7 @@ const About = () => {
       </Parallax>
       <div className="mt-10 mx-4 flex flex-col items-center gap-20">
         <div className="aboutImg hidden md:block">
-          <img src={about2} alt="" className="bigImg rounded-md" />
+          <img src={about2} alt="" className="bigImg rounded-md " />
           <img src={about3} alt="" className="smImg" />
         </div>
         <div className=" ml-3  space-y-5">

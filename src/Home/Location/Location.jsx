@@ -29,7 +29,7 @@ const Location = () => {
             <FaLocationDot className="text-[#bc0024]"></FaLocationDot>
             <span className="font-serif"> Mirpur 10, Dhaka</span>
           </div>
-          <p className="text-[#525050]">
+          <p className="text-[#525050] text-justify mx-1">
             Apartment Hub, situated in the vibrant locale of Mirpur, offers a
             contemporary living experience at the heart of the city. With its
             modern amenities and convenient location, Apartment Hub is the

@@ -8,27 +8,27 @@ const Footers = () => {
     <div className="mt-10 ">
       <Footer container>
         <div className="w-full">
-          <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
+          <div className="w-full justify-between sm:flex sm:justify-center md:flex md:grid-cols-1">
             <div className="mt-10">
               <img src={logo} alt="" className="w-[100px] h-[100px] mx-auto" />
-              <span className=" self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+              <p className=" text-2xl font-semibold text-center">
                 Apartment Hub
-              </span>
+              </p>
             </div>
-            <div className="flex flex-col md:flex-row items-center  gap-10 sm:mt-2  ">
+            <div className="flex flex-col md:flex-row items-center justify-center  gap-10 sm:mt-2  ">
               <div>
-                <Footer.Title title="Address" />
-                <Footer.LinkGroup col>
+                <Footer.Title title="Address" className="mt-4 md:mt-0 text-lg text-center md:text-left ml-0 md:ml-4" />
+                <Footer.LinkGroup col className="ml-0 md:ml-4">
                   <Footer.Link href="#">
                     28 , Islam Centre, Mirpur, Dhaka
                   </Footer.Link>
-                  <Footer.Link href="#">Email: trendZen@gmail.com</Footer.Link>
+                  <Footer.Link href="#">Email: apartmenthub@gmail.com</Footer.Link>
                   <Footer.Link href="#">Helpline: 0123291315</Footer.Link>
                 </Footer.LinkGroup>
               </div>
               <div>
-                <Footer.Title title="About" />
-                <Footer.LinkGroup col>
+                <Footer.Title title="About" className="mt-4 text-lg text-center md:text-left ml-0 md:ml-4"/>
+                <Footer.LinkGroup col className="ml-0 md:ml-4">
                   <Footer.Link href="#">About Us</Footer.Link>
                   <Footer.Link href="#">Privacy Policy</Footer.Link>
                   <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
@@ -37,7 +37,7 @@ const Footers = () => {
               </div>
               
               <div>
-                <Footer.Title title="Install App" />
+                <Footer.Title title="Install App" className="mt-4 text-lg text-center md:text-left "/>
                 <Footer.LinkGroup col>
                   <Footer.Link href="#">
                   From App Store or Google Play
@@ -55,8 +55,8 @@ const Footers = () => {
             </div>
           </div>
           <Footer.Divider />
-          <div className="w-full sm:flex sm:items-center sm:justify-between">
-          <Footer.Copyright href="#" by="ApartmentHub™" year={2024} />
+          <div className="w-full mx-auto flex gap-2 justify-center items-center">
+          <Footer.Copyright href="#" by="ApartmentHub™" year={2024} className="mt-4  text-center"/>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon href="#" icon={FaFacebook} />
             <Footer.Icon href="#" icon={FaInstagram} />

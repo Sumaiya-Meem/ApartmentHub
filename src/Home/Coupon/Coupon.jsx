@@ -7,6 +7,7 @@ import './Coupon.css'
 import useCouponAvail from "../../Hooks/useCouponAvail"
 import Aos from "aos";
 import 'aos/dist/aos.css'
+import toast from "react-hot-toast";
 const Coupon = () => {
   const [coupon, setCoupon] = useState([]);
   const [coupons] = useCouponAvail()
@@ -27,11 +28,7 @@ const Coupon = () => {
 
   const handleCopy = () => {
     setCopy(coupon);
-    Swal.fire({
-      title: "Copy Coupon",
-      text: "",
-      icon: "success",
-    });
+    toast.success('Copy the coupon!')
     console.log(copyValue)
   };
   return (

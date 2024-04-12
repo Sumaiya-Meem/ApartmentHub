@@ -26,16 +26,21 @@ const Registration = () => {
 
 
     const onSubmit =async (data) => {
+        console.log(data);
         const imgFile = { image: data.photo[0] }
+        console.log(imgFile)
         const res = await axiosPublic.post(img_hosting_api, imgFile, {
             headers: {
                 'Content-Type': "multipart/form-data"
             }
         })
+        console.log(res)
         const img_url = res?.data?.data?.display_url;
+        console.log(img_url)
         if(img_url){
             createUser(data.email, data.password)
             .then(result=> {
+                console.log(result.user)
                 if(result.user){
                      updateProfile(auth.currentUser, {
                         displayName: data.username,
@@ -85,7 +90,7 @@ const Registration = () => {
                             {...register('username', { required: 'Username is required' })}
                             className={`w-full p-2 border block rounded ${errors.username ? 'border-red-500' : 'border-gray-300'}`}
                         />
-                        {errors.username && <span className="text-red-500 text-sm">{errors.username.message}</span>}
+                        {errors.username && <span className="text-red-700 text-sm">{errors.username.message}</span>}
                     </div>
 
                     <div className="mb-4">
