@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-
-import './../index.css'
-import { FaArrowCircleRight, FaArrowCircleLeft} from "react-icons/fa";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+// import './../index.css'
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import ApartCard from "./ApartCard";
 
@@ -15,7 +15,8 @@ const Apartment = () => {
     const [apartments, setApartments] = useState([]);
     const [currentPage, setCurrentPage] = useState(0)
     const [result, setResult] = useState(10);
-    const [perPage, setParPage] = useState(6);
+    const [perPage, setParPage] = useState(5);
+
     const numberOfPages = Math.ceil(result / perPage);
 
     const arrOFPages = [...Array(numberOfPages).keys()]
@@ -74,19 +75,20 @@ const Apartment = () => {
                 </div>
                 <div className='flex justify-center mt-5 items-center'>
 
-                    <button className="btn-circle text-2xl" onClick={handlePrevPage}><FaArrowCircleLeft className="text-blue-800"/></button>
+                    <button className="btn-circle text-2xl" onClick={handlePrevPage}><IoIosArrowBack className="text-blue-800"/></button>
                     {
-                        arrOFPages.map(page => <button className={` mx-2 bg-blue-100 px-2 rounded-md font-bold ${page === currentPage ? 'selected' : ''}`}
+                        arrOFPages.map(page => <button className={` mx-2 bg-gray-200 px-2 font-bold ${page === currentPage ? 'selected' : ''}`}
                             onClick={() => setCurrentPage(page)}
                             key={page}>{page}</button>)
                     }
                     <select className="border border-blue-500" value={perPage} onChange={handleSelectPage} id="">
                         <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="6">6</option>
+                        <option value="4">4</option>
+                        <option value="8">8</option>
+                        <option value="12">12</option>
 
                     </select>
-                    <button className=" mx-3 text-2xl " onClick={handleNextPage}><FaArrowCircleRight className="text-blue-800"/></button>
+                    <button className=" mx-3 text-2xl " onClick={handleNextPage}><IoIosArrowForward className="text-blue-800"/></button>
                 </div>
             </div>
             }
