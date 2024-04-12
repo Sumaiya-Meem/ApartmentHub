@@ -20,6 +20,7 @@ import MemberProfile from "../Dashboard/profiles/MemberProfile";
 import PaymentForm from "../paymentPage/PaymentForm";
 import Payment from "../paymentPage/Payment";
 import PaymentHistory from "../Dashboard/profiles/PaymentHistory";
+import AdminDashboard from "../Dashboard/AdminDashboard/AdminDashboard";
 
   
   const router = createBrowserRouter([
@@ -52,6 +53,11 @@ import PaymentHistory from "../Dashboard/profiles/PaymentHistory";
         path:'/dashboard',
         element:<UserPrivate><LayoutDA></LayoutDA></UserPrivate>,
         children: [
+          {
+            path:'admin-dashboard',
+            element:<AdminPrivate><AdminDashboard></AdminDashboard></AdminPrivate>
+
+        },
           {
             path:'admin-profile',
             element:<AdminPrivate><AdminProfile></AdminProfile></AdminPrivate>
