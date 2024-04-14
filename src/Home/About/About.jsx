@@ -4,8 +4,14 @@ import about2 from "../../../public/about2.avif";
 import about3 from "../../../public/about3.jpg";
 import "./About.css";
 import { FaLocationDot } from "react-icons/fa6";
-
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 const About = () => {
+  useEffect(()=> {
+    Aos.init()     
+},[])
+
   return (
     <div>
       <div className="text-center my-10 text-[#bc0024] text-2xl font-bold font-serif">
@@ -24,7 +30,7 @@ const About = () => {
         </div>
       </Parallax>
       <div className="mt-10 mx-4 flex flex-col items-center gap-20">
-        <div className="aboutImg hidden md:block">
+        <div className="aboutImg hidden md:block" data-aos="zoom-in-up">
           <img src={about2} alt="" className="bigImg rounded-md " />
           <img src={about3} alt="" className="smImg" />
         </div>

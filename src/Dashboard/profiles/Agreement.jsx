@@ -50,35 +50,35 @@ const Agreement = () => {
                     <thead>
                         <tr className="border-b">
 
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                 User Name
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                 User Email
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                 Floor No
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                 Block Name
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                 Room No
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                 Rent
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                 Agreement Request Date
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900  border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                 Accept/Reject
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         {agreementData.map((item, index) => (
-                            <tr key={index} className={index % 2 === 0 ? 'bg-gray-100' : ''}>
+                            <tr key={index} className={index % 2 === 0 ? 'bg-gray-200' : ''}>
                                 <td className="py-1 border-r text-center px-1">{index + 1}. {item.userName}</td>
                                 <td className="py-1 border-r text-center px-1">{item.userEmail}</td>
                                 <td className="py-1 border-r text-center px-1">{item.floorNo}</td>
@@ -97,7 +97,7 @@ const Agreement = () => {
                                                     Reject
                                                 </button>
                                             </td>
-                                        </> : <td className="flex justify-center items-center gap-1 pt-2 ">Checked <FaCheckCircle></FaCheckCircle></td>
+                                        </> : <td className="flex justify-center items-center gap-1 pt-2 ">Checked <FaCheckCircle className="text-green-500"></FaCheckCircle></td>
                                 }
 
 

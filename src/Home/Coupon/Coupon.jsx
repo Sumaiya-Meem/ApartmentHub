@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MdOutlineContentCopy } from "react-icons/md";
-import Swal from "sweetalert2";
+
 import { useCopyToClipboard } from "usehooks-ts";
 import './Coupon.css'
 import useCouponAvail from "../../Hooks/useCouponAvail"

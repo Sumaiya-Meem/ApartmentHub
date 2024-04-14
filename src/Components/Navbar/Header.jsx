@@ -39,6 +39,15 @@ const Header = () => {
       >
         Apartment
       </NavLink>
+
+      <NavLink
+        to="/localview"
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-[#bc0024] font-bold menu   " : "text-black"
+        }
+      >
+        LocalView
+      </NavLink>
      
      
     </>
@@ -68,7 +77,7 @@ const Header = () => {
                 <span className="block truncate text-sm font-medium">{user?.email}</span>
             </Dropdown.Header>
             <Dropdown.Item>
-                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/dashboard/admin-dashboard">Dashboard</Link>
             </Dropdown.Item>
             <Dropdown.Divider />
             <Dropdown.Item>

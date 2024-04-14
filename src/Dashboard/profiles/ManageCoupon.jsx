@@ -45,7 +45,9 @@ const ManageCoupon = () => {
         })
     }
 
-
+    const closeModal = () => {
+        document.getElementById('my_modal_5').close();
+    };
 
     return (
         <div className='mt-12'>
@@ -53,7 +55,7 @@ const ManageCoupon = () => {
                 <div className="bg-white rounded-lg overflow-auto">
                     <div>
                         <div className="flex justify-center mb-5">
-                            <Button className="btn text-center" onClick={() => document.getElementById('my_modal_5').showModal()}>Add</Button >
+                            <Button className="btn text-center bg-blue-800" onClick={() => document.getElementById('my_modal_5').showModal()}>Add</Button >
                         </div>
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle w-[600px] rounded-md shadow-md">
                             <div className="modal-box">
@@ -74,7 +76,7 @@ const ManageCoupon = () => {
 
                                 <div className="modal-action">
                                     <form method="dialog">
-                                        <Button className="btn btn-sm m-2" color="failure">Close</Button>
+                                        <Button onClick={closeModal} className="btn btn-sm m-2" color="failure">Close</Button>
                                     </form>
                                 </div>
                             </div>
@@ -83,16 +85,16 @@ const ManageCoupon = () => {
                     <table className="min-w-full">
                         <thead>
                             <tr className="border-b">
-                                <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                     Coupon code
                                 </th>
-                                <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white uppercase tracking-wider">
                                     Discount percentage
                                 </th>
-                                <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500 text-left text-xs font-semibold text-white  uppercase tracking-wider">
                                     Coupon description
                                 </th>
-                                <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th className="py-4 px-6 bg-blue-900  border-gray-500 text-left text-xs font-semibold text-white  uppercase tracking-wider">
                                     Make Unavailable
                                 </th>
                             </tr>

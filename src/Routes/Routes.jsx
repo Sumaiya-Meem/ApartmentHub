@@ -21,6 +21,7 @@ import PaymentForm from "../paymentPage/PaymentForm";
 import Payment from "../paymentPage/Payment";
 import PaymentHistory from "../Dashboard/profiles/PaymentHistory";
 import AdminDashboard from "../Dashboard/AdminDashboard/AdminDashboard";
+import LocalView from "../LocalView/LocalView";
 
   
   const router = createBrowserRouter([
@@ -36,6 +37,11 @@ import AdminDashboard from "../Dashboard/AdminDashboard/AdminDashboard";
           path: 'apartment',
           element: <Apartment></Apartment>
       },
+      {
+        path: 'localview',
+        element: <LocalView></LocalView>
+    },
+    
         {
           path: "/login",
           element: <Login></Login>, 
@@ -53,11 +59,7 @@ import AdminDashboard from "../Dashboard/AdminDashboard/AdminDashboard";
         path:'/dashboard',
         element:<UserPrivate><LayoutDA></LayoutDA></UserPrivate>,
         children: [
-          {
-            path:'admin-dashboard',
-            element:<AdminPrivate><AdminDashboard></AdminDashboard></AdminPrivate>
-
-        },
+         
           {
             path:'admin-profile',
             element:<AdminPrivate><AdminProfile></AdminProfile></AdminPrivate>
@@ -96,6 +98,11 @@ import AdminDashboard from "../Dashboard/AdminDashboard/AdminDashboard";
         
 
         // admin route
+        {
+          path:'admin-dashboard',
+          element:<AdminPrivate><AdminDashboard></AdminDashboard></AdminPrivate>
+
+      },
         {
           path: 'make-announce',
           element: <AdminPrivate><MakeAnnounce></MakeAnnounce></AdminPrivate>

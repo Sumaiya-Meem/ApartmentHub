@@ -3,9 +3,13 @@ import { FaSackDollar } from "react-icons/fa6";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { ContextProvider } from "../Context/AuthProvider";
+import useUserRole from "../Hooks/useUserRole";
 
 // eslint-disable-next-line react/prop-types
 const ApartCard = ({ apartment }) => {
+  const { userRole } = useUserRole();
+  const role = userRole?.role
+
   // eslint-disable-next-line react/prop-types
   const { apartmentImage, apartmentNo, blockName, floorNo, rent, id } =
     apartment;
@@ -35,12 +39,13 @@ const ApartCard = ({ apartment }) => {
     };
 
     axiosSecure.post(`/apartment`, apartmentData).then((res) => {
-      if (res?.data?.acknowledged) {
-        toast.success("Request send successfully");
-      }
       if (res?.data?.message) {
         toast.error("already added");
       }
+      if (res?.data?.acknowledged) {
+        toast.success("Request send successfully");
+      }
+      
       console.log(res.data);
     });
   };
@@ -71,7 +76,7 @@ const ApartCard = ({ apartment }) => {
           </div>
         </div>
 
-        <div className="px-6 py-3 flex justify-center">
+        {role =='admin' ? " ": <div className="px-6 py-3 flex justify-center">
           <button
             onClick={handleAddApartment}
             className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
@@ -79,6 +84,8 @@ const ApartCard = ({ apartment }) => {
             Agreement
           </button>
         </div>
+        
+        }
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { TbHomeHand } from "react-icons/tb";
-import { FaCircleUser } from "react-icons/fa6";
 import { IoIosPeople } from "react-icons/io";
 import { TbHomeOff } from "react-icons/tb";
 import { TbHomeCheck } from "react-icons/tb";
+import { FaUserFriends } from "react-icons/fa";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 
@@ -52,7 +52,7 @@ const AdminDashboard = () => {
                     <h1 className="text-[#012970] font-[500] mb-3 text-xl font-serif">Users</h1>
                
                <div className="flex items-center gap-2">
-               <div className="bg-blue-100 p-5 rounded-[50%]"><FaCircleUser className="text-3xl text-blue-500"></FaCircleUser></div>
+               <div className="bg-blue-100 p-5 rounded-[50%]"><FaUserFriends className="text-3xl text-blue-500"></FaUserFriends></div>
                <p className="text-[28px] font-bold text-[#012970] ">{adminData?.users}</p>
                 </div> 
             </div>
