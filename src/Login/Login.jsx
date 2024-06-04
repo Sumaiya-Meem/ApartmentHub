@@ -4,6 +4,7 @@ import {Link , useNavigate} from 'react-router-dom'
 import toast from 'react-hot-toast';
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import { ContextProvider } from "../Context/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
 
 import bg from "../../public/bg1.avif";
 const Login = () => {
@@ -53,7 +54,7 @@ const Login = () => {
           })
     }
     const backgroundImageStyle = {
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
@@ -63,8 +64,8 @@ const Login = () => {
         <div className="flex justify-between" style={backgroundImageStyle}>
             <div className="lg:w-[50%] mx-auto w-full h-screen flex justify-center items-center">
 
-                <form className="bg-white lg:w-[70%]  p-8 shadow-lg rounded-lg" onSubmit={handleSubmit(onSubmit)}>
-                    <h2 className="text-2xl font-bold mb-4">Login</h2>
+                <form className="bg-white lg:w-[70%]  px-8 py-1 shadow-lg rounded-lg" onSubmit={handleSubmit(onSubmit)}>
+                    <h2 className="text-2xl font-bold mb-4 text-blue-800">Login</h2>
 
 
                     <div className="mb-4">
@@ -93,22 +94,30 @@ const Login = () => {
                         {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
                     </div>
 
-                   <div className="flex flex-col items-center gap-2 justify-between">
-                   <button
-                        type="submit"
-                        className=" w-[45%] border border-blue-600 hover:text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
-                    >
-                        Login
-                    </button>
-                    <div><h1>OR</h1></div>
-                    <div onClick={handleGoogle}
-                        className="w-[45%] text-center border border-blue-600  px-4 py-2 rounded-full h"
-                    >
-                      Login with  Google
-                    </div>
-
-                   </div>
-                   <h1 className="mt-5">Are You New Here? <Link className="text-blue-700 underline" to='/registration'>Registration</Link></h1>
+                    <div className="flex flex-col items-center gap-2 justify-between">
+            <button
+              type="submit"
+              className=" px-4 py-2 bg-blue-800 text-white w-full rounded-md font-bold  focus:outline-none focus:shadow-outline-blue"
+            >
+              Login
+            </button>
+            <div>
+              <h1>OR</h1>
+            </div>
+            <div
+              onClick={handleGoogle}
+              className="w-full cursor-pointer text-center border bg-blue-800 text-white  px-4 py-2 rounded-md flex items-center justify-center gap-1 text-xl"
+            >
+                <p><FcGoogle></FcGoogle></p>
+              <p>Google</p>
+            </div>
+          </div>
+          <h1 className="mt-5">
+          {"Don't"} have any account ? 
+            <Link className="text-blue-600 font-bold underline ml-1" to="/registration">
+               Registration
+            </Link>
+          </h1>
                 </form>
 
 

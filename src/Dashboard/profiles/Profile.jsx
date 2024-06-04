@@ -1,12 +1,14 @@
 import { useContext } from 'react';
 import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-
+import { MdAdminPanelSettings } from "react-icons/md";
 import { ContextProvider } from '../../Context/AuthProvider';
+import useUserRole from '../../Hooks/useUserRole';
 
 
 const Profile = () => {
     const { user } = useContext(ContextProvider);
-    
+    const { userRole } = useUserRole();
+    const role = userRole?.role
 
     return (
         <div className='mt-12 md:mx-0 mx-3'>
@@ -18,6 +20,10 @@ const Profile = () => {
                 </div>
                 <div className="pt-12 pb-5 px-5">
                     <h2 className="text-2xl font-bold mb-2">{user?.displayName}</h2>
+                    <div className="flex items-center mb-4">
+                            <MdAdminPanelSettings className="text-gray-500 mr-2 text-xl" />
+                            <p className="text-gray-700 uppercase font-bold">{role}</p>
+                        </div>
                     <p className="text-gray-600 mb-4"></p>
                     <div className="flex items-center mb-4">
                         <FaEnvelope className="text-gray-500 mr-2" />
@@ -34,16 +40,16 @@ const Profile = () => {
                 <table className="min-w-full">
                     <thead>
                         <tr className="border-b">
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500  text-xs font-semibold text-white uppercase tracking-wider">
                                 Agreement Accept Date
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500  text-xs font-semibold text-white uppercase tracking-wider">
                                 Building
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500  text-xs font-semibold text-white uppercase tracking-wider">
                                 Floor
                             </th>
-                            <th className="py-4 px-6 bg-gray-300 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 bg-blue-900 border-r-[1px] border-gray-500  text-xs font-semibold text-white uppercase tracking-wider">
                                 Room No
                             </th>
                             

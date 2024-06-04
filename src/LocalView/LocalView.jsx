@@ -15,16 +15,19 @@ import garage from "../../public/garage.png";
 import food from "../../public/food.png";
 
 const LocalView = () => {
+
+  
+
   return (
     <div>
       <Parallax
         bgImage={img}
         strength={600}
         className=""
-        style={{ opacity: "0.8" }}
+    style={{ background: "linear-gradient(to top, rgba(86, 85, 85, 0.8) 1%, rgba(86, 85, 85, 0.7))" }}
       >
         <div className="h-[440px] flex flex-col items-center justify-center text-white bg-gradient-to-t from-[#151515] to-[rgba(21,21,21,0)] ">
-          <h1 className="text-4xl font-serif text-[#ac0221d6] mb-4 font-bold">
+          <h1 className="text-4xl font-serif text-white mb-4 font-bold">
             Neighborhood Overview
           </h1>
           <p className="w-2/3">
@@ -149,7 +152,7 @@ const LocalView = () => {
 
       {/* <div className="w-full h-[1px] bg-gray-400  my-10 "></div> */}
 
-      <h1 className="text-2xl  py-3 px-4">What's Nearby?</h1>
+      <h1 className="text-2xl  py-3 px-4">What is Nearby?</h1>
       <div className="border-t-[2px] border-[#000000] mx-6">
          <div className="flex items-center gap-1 py-2">
          <img src={food} alt="" /> 

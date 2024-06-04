@@ -1,60 +1,40 @@
-import { useContext } from "react";
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import { FaSackDollar } from "react-icons/fa6";
-import toast from "react-hot-toast";
+import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from "../Hooks/useAxiosSecure";
-import { ContextProvider } from "../Context/AuthProvider";
-import useUserRole from "../Hooks/useUserRole";
-
-// eslint-disable-next-line react/prop-types
+import './Apartment.css'
+import { Link } from "react-router-dom";
 const ApartCard = ({ apartment }) => {
-  const { userRole } = useUserRole();
-  const role = userRole?.role
-
-  // eslint-disable-next-line react/prop-types
-  const { apartmentImage, apartmentNo, blockName, floorNo, rent, id } =
-    apartment;
+  const { apartmentImage, apartmentNo, blockName, floorNo, rent,_id} = apartment;
   const axiosSecure = useAxiosSecure();
-  const { user } = useContext(ContextProvider);
+  const [isAgreed, setIsAgreed] = useState(false);
 
-  const handleAddApartment = () => {
-    if (!user?.email) {
-      return toast.error("You are not login user!");
+  const { data: agreementAcceptData = [] } = useQuery({
+    queryKey: ['member'],
+    queryFn: async () => {
+        const res = await axiosSecure.get('/agreementAccept')
+        return res.data;
     }
+});
 
-    const today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth() + 1;
-    let yy = today.getFullYear();
-
-    const apartmentData = {
-      floorNo,
-      blockName,
-      apartmentNo,
-      date: `${dd}-${mm}-${yy}`,
-      id,
-      rent,
-      status: "pending",
-      userName: user?.displayName,
-      userEmail: user?.email,
-    };
-
-    axiosSecure.post(`/apartment`, apartmentData).then((res) => {
-      if (res?.data?.message) {
-        toast.error("already added");
-      }
-      if (res?.data?.acknowledged) {
-        toast.success("Request send successfully");
-      }
-      
-      console.log(res.data);
-    });
+// console.log(agreementAcceptData);
+useEffect(() => {
+  const checkAgreementStatus = () => {
+    const agreementExists = agreementAcceptData.some(agreement => agreement.floorNo === floorNo && agreement.apartmentNo === apartmentNo);
+    setIsAgreed(agreementExists);
   };
 
+  checkAgreementStatus();
+}, [agreementAcceptData, floorNo, apartmentNo]);
+
+
+
   return (
-    <div>
-      <div className="max-w-sm mx-auto  overflow-hidden shadow-lg rounded-md">
+    <div className="">
+      <div className="w-[340px] mx-auto overflow-hidden shadow-lg rounded-md">
         <img
-        className="w-full h-48  border-[1px] border-black rounded-md"
+          className="w-full h-48 border-[1px] border-black rounded-md"
           src={apartmentImage}
           alt={`Apartment ${apartmentNo}`}
         />
@@ -66,7 +46,7 @@ const ApartCard = ({ apartment }) => {
           </div>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-gray-700 text-base">Floor : <span className="font-bold">{floorNo}</span></p>
+              <p className="text-gray-700 text-base">Floor: <span className="font-bold">{floorNo}</span></p>
             </div>
             <div className="flex items-center">
               <FaSackDollar className="mr-2 text-red-700" />
@@ -76,16 +56,23 @@ const ApartCard = ({ apartment }) => {
           </div>
         </div>
 
-        {role =='admin' ? " ": <div className="px-6 py-3 flex justify-center">
-          <button
-            onClick={handleAddApartment}
-            className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-          >
-            Agreement
+        <div className="px-6 py-3 flex  justify-between">
+          <Link to={`apartmentDetails/${_id}`}>
+          <button className="custom-btn btn-1">View Details</button>
+          </Link>
+          {
+            isAgreed ? 
+            
+            <button className="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
+            Already rented
           </button>
+             : 
+              <button className="bg-blue-800  text-white font-bold py-2 px-4 rounded-md">
+                Agreement
+              </button>
+            
+          }
         </div>
-        
-        }
       </div>
     </div>
   );

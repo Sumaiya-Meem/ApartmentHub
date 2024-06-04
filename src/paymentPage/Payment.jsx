@@ -64,7 +64,8 @@ const Payment = () => {
                 <div className="mb-24">
                      <form onSubmit={handleSubmit(onSubmit)} className="flex justify-center gap-5">
                         <input {...register("coupon")} className="bg-gray-200 py-1 px-3 w-[35%]" type="text" />
-                        <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center justify-between" type="submit" value="Apply Coupon" />
+                        <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center justify-between"
+                         type="submit" value="Apply Coupon" />
                      </form>
                       
                 </div>

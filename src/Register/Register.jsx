@@ -68,7 +68,7 @@ const Registration = () => {
         }
     }
     const backgroundImageStyle = {
-        backgroundImage: `url(${bg})`,
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
@@ -79,8 +79,8 @@ const Registration = () => {
         <div className="flex justify-between" style={backgroundImageStyle}>
             <div className="lg:w-[50%] mx-auto lg:px-0 lg:py-0 px-3  min-h-screen w-full py-5 flex justify-center items-center">
 
-                <form className="bg-white lg:w-[70%]  p-8 shadow-lg rounded-lg" onSubmit={handleSubmit(onSubmit)}>
-                    <h2 className="text-2xl text-[#008374] font-bold mb-4">Registration Now</h2>
+                <form className="bg-white lg:w-[70%]  px-8 py-1 shadow-lg rounded-lg" onSubmit={handleSubmit(onSubmit)}>
+                    <h2 className="text-2xl text-blue-800 font-bold mb-4">Registration Now</h2>
 
                     <div className="mb-4">
                         <label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">Name</label>
@@ -133,12 +133,12 @@ const Registration = () => {
                     <div className="flex justify-between">
                         <button
                             type="submit"
-                            className=" w-full bg-[#008374] text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+                            className=" w-full bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
                         >
                             Sing Up
                         </button>
                     </div>
-                    <h1 className="mt-5">Do You Have Any Account? <Link className="text-[#358b81] font-bold underline" to='/login'>Login</Link></h1>
+                    <h1 className="mt-5">Do You Have Any Account? <Link className="text-blue-800 font-bold underline" to='/login'>Login</Link></h1>
                 </form>
 
 

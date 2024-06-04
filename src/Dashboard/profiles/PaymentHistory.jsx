@@ -45,28 +45,28 @@ const PaymentHistory = () => {
                 <table className="min-w-full ">
                     <thead className="">
                         <tr className="border-b">
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 email
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 rent
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 transactionId
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 month
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 date
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 apartmentNo
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 blockName
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 floor
                             </th>
 

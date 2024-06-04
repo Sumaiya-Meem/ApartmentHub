@@ -1,0 +1,15 @@
+
+
+.navbar {
+    background: #fff;
+    color: black;
+    height: 56px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .navbar.active {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  

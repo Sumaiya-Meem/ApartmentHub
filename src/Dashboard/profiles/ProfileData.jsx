@@ -7,16 +7,16 @@ const ProfileData = ({memberData}) => {
                 <table className="min-w-full">
                     <thead>
                         <tr className="border-b">
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 Agreement Accept Date
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 Block
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 Floor
                             </th>
-                            <th className="py-4 px-6 text-center bg-gray-300  text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th className="py-4 px-6 text-center bg-blue-900 border-r-[1px] border-gray-500  text-sm font-semibold text-white uppercase tracking-wider">
                                 Room No
                             </th>
                             

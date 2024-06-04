@@ -119,7 +119,8 @@ const handleSubmit = async(event) =>{
                         },
                     }}
                 />
-                <button  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out my-5" type="submit" disabled={!stripe || !clientSecret}>
+                <button  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300 ease-in-out my-5" type="submit" 
+                disabled={!stripe || !clientSecret}>
                     Pay
                 </button>
                 <p className='text-red-600'>{error}</p>

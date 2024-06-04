@@ -6,9 +6,6 @@ import useAxiosPublic from "../Hooks/useAxiosPublic";
 import ApartCard from "./ApartCard";
 
 
-
-
-
 const Apartment = () => {
     const axiosPublic = useAxiosPublic();
     const [isLoading, setIsLoading] = useState(true)
@@ -36,7 +33,7 @@ const Apartment = () => {
 
 
     useEffect(() => {
-        fetch('https://apartment-hub-server.vercel.app/apartment-count')
+        fetch('http://localhost:5000/apartment-count')
             .then(res => res.json())
             .then(data => setResult(data.result))
     }, [])

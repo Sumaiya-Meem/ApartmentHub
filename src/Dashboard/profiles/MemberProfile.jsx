@@ -5,12 +5,15 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import ProfileData from './ProfileData';
 import {ContextProvider} from "../../Context/AuthProvider"
-
+import { MdAdminPanelSettings } from "react-icons/md";
+import useUserRole from '../../Hooks/useUserRole';
 
 
 const MemberProfile = () => {
     const { user } = useContext(ContextProvider);
     const axiosSecure = useAxiosSecure();
+    const { userRole } = useUserRole();
+    const role = userRole?.role
 
     const {data: memberData = []} = useQuery({
         queryKey: [user?.email,'member'],
@@ -33,6 +36,10 @@ const MemberProfile = () => {
                     </div>
                     <div className="pt-12 pb-5 px-5">
                         <h2 className="text-2xl font-bold mb-2">{user?.displayName}</h2>
+                        <div className="flex items-center mb-4">
+                            <MdAdminPanelSettings className="text-gray-500 mr-2 text-xl" />
+                            <p className="text-gray-700 uppercase font-bold">{role}</p>
+                        </div>
                         <p className="text-gray-600 mb-4"></p>
                         <div className="flex items-center mb-4">
                             <FaEnvelope className="text-gray-500 mr-2" />

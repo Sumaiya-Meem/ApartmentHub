@@ -22,12 +22,15 @@ import Payment from "../paymentPage/Payment";
 import PaymentHistory from "../Dashboard/profiles/PaymentHistory";
 import AdminDashboard from "../Dashboard/AdminDashboard/AdminDashboard";
 import LocalView from "../LocalView/LocalView";
+import ErrorPage from "../ErrorPage/ErrorPage";
+import SingleApartment from "../apartment/SingleApartment";
 
   
   const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           path: "/",
@@ -37,6 +40,11 @@ import LocalView from "../LocalView/LocalView";
           path: 'apartment',
           element: <Apartment></Apartment>
       },
+      {
+        path: 'apartment/apartmentDetails/:id',
+        element: <SingleApartment></SingleApartment>,
+        loader:({params})=>fetch(`http://localhost:5000/apartment/${params.id}`)
+    },
       {
         path: 'localview',
         element: <LocalView></LocalView>
@@ -50,8 +58,7 @@ import LocalView from "../LocalView/LocalView";
           path: "/registration",
           element: <Register></Register>, 
         },
-      
-        
+         
    
       ]
       },

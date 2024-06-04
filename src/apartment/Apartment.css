@@ -1,0 +1,33 @@
+.custom-btn {
+    width: 140px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: 1px 1px 2px 0 rgba(255,255,255,.5),
+    -1px -1px 2px 0 rgba(116, 125, 136, .5), 
+inset -1px -1px 2px 0 rgba(255,255,255,.2),
+inset 1px 1px 2px 0 rgba(0, 0, 0, .4);
+    outline: none;
+   }
+   
+   .btn-1 {
+    background: rgb(66, 14, 148);
+    background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+    border: none;
+   }
+   
+   .btn-1:before {
+    height: 0%;
+    width: 2px;
+   }
+   
+   
+   

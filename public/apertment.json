@@ -5,7 +5,18 @@
       "floorNo": 3,
       "blockName": "A",
       "apartmentNo": 103,
-      "rent": 1200
+      "rent": 1200,
+      "images": [
+        "https://i.ibb.co/6DpsMgn/pexels-jvdm-1457842.jpg",
+        "https://i.ibb.co/W6054y0/1.jpg",
+        "https://i.ibb.co/3fFTT61/2.jpg",
+        "https://i.ibb.co/0McCmGD/3.jpg",
+        "https://i.ibb.co/pnDVhfN/5.jpg",
+        "https://i.ibb.co/PW2wwDt/6.jpg",
+        "https://i.ibb.co/WDxxCCf/4.jpg",
+        "https://i.ibb.co/Nx4Y0nm/7.jpg",
+        "https://i.ibb.co/8g3qq0C/8.jpg"
+      ]
     },
     {
       "id": "2",
@@ -13,7 +24,18 @@
       "floorNo": 8,
       "blockName": "B",
       "apartmentNo": 145,
-      "rent": 1500
+      "rent": 1500,
+      "images": [
+        "https://i.ibb.co/6DpsMgn/pexels-jvdm-1457842.jpg",
+        "https://i.ibb.co/W6054y0/1.jpg",
+        "https://i.ibb.co/3fFTT61/2.jpg",
+        "https://i.ibb.co/0McCmGD/3.jpg",
+        "https://i.ibb.co/pnDVhfN/5.jpg",
+        "https://i.ibb.co/PW2wwDt/6.jpg",
+        "https://i.ibb.co/WDxxCCf/4.jpg",
+        "https://i.ibb.co/Nx4Y0nm/7.jpg",
+        "https://i.ibb.co/8g3qq0C/8.jpg"
+      ]
     },
     {
       "id": "3",
@@ -21,7 +43,18 @@
       "floorNo": 5,
       "blockName": "C",
       "apartmentNo": 45,
-      "rent": 1100
+      "rent": 1100,
+      "images": [
+        "https://i.ibb.co/6DpsMgn/pexels-jvdm-1457842.jpg",
+        "https://i.ibb.co/W6054y0/1.jpg",
+        "https://i.ibb.co/3fFTT61/2.jpg",
+        "https://i.ibb.co/0McCmGD/3.jpg",
+        "https://i.ibb.co/pnDVhfN/5.jpg",
+        "https://i.ibb.co/PW2wwDt/6.jpg",
+        "https://i.ibb.co/WDxxCCf/4.jpg",
+        "https://i.ibb.co/Nx4Y0nm/7.jpg",
+        "https://i.ibb.co/8g3qq0C/8.jpg"
+      ]
     },
     {
       "id": "4",
@@ -29,7 +62,18 @@
       "floorNo": 8,
       "blockName": "A",
       "apartmentNo": 120,
-      "rent": 1800
+      "rent": 1800,
+      "images": [
+        "https://i.ibb.co/6DpsMgn/pexels-jvdm-1457842.jpg",
+        "https://i.ibb.co/W6054y0/1.jpg",
+        "https://i.ibb.co/3fFTT61/2.jpg",
+        "https://i.ibb.co/0McCmGD/3.jpg",
+        "https://i.ibb.co/pnDVhfN/5.jpg",
+        "https://i.ibb.co/PW2wwDt/6.jpg",
+        "https://i.ibb.co/WDxxCCf/4.jpg",
+        "https://i.ibb.co/Nx4Y0nm/7.jpg",
+        "https://i.ibb.co/8g3qq0C/8.jpg"
+      ]
     },
     {
       "id": "5",
@@ -37,7 +81,18 @@
       "floorNo": 4,
       "blockName": "B",
       "apartmentNo": 60,
-      "rent": 1300
+      "rent": 1300,
+      "images": [
+        "https://i.ibb.co/6DpsMgn/pexels-jvdm-1457842.jpg",
+        "https://i.ibb.co/W6054y0/1.jpg",
+        "https://i.ibb.co/3fFTT61/2.jpg",
+        "https://i.ibb.co/0McCmGD/3.jpg",
+        "https://i.ibb.co/pnDVhfN/5.jpg",
+        "https://i.ibb.co/PW2wwDt/6.jpg",
+        "https://i.ibb.co/WDxxCCf/4.jpg",
+        "https://i.ibb.co/Nx4Y0nm/7.jpg",
+        "https://i.ibb.co/8g3qq0C/8.jpg"
+      ]
     },
     {
       "id": "6",
@@ -45,7 +100,18 @@
       "floorNo": 6,
       "blockName": "C",
       "apartmentNo": 87,
-      "rent": 1600
+      "rent": 1600,
+      "images": [
+        "https://i.ibb.co/6DpsMgn/pexels-jvdm-1457842.jpg",
+        "https://i.ibb.co/W6054y0/1.jpg",
+        "https://i.ibb.co/3fFTT61/2.jpg",
+        "https://i.ibb.co/0McCmGD/3.jpg",
+        "https://i.ibb.co/pnDVhfN/5.jpg",
+        "https://i.ibb.co/PW2wwDt/6.jpg",
+        "https://i.ibb.co/WDxxCCf/4.jpg",
+        "https://i.ibb.co/Nx4Y0nm/7.jpg",
+        "https://i.ibb.co/8g3qq0C/8.jpg"
+      ]
     },
     {
       "id": "7",
@@ -53,7 +119,18 @@
       "floorNo": 7,
       "blockName": "A",
       "apartmentNo": 102,
-      "rent": 1700
+      "rent": 1700,
+      "images": [
+        "https://i.ibb.co/6DpsMgn/pexels-jvdm-1457842.jpg",
+        "https://i.ibb.co/W6054y0/1.jpg",
+        "https://i.ibb.co/3fFTT61/2.jpg",
+        "https://i.ibb.co/0McCmGD/3.jpg",
+        "https://i.ibb.co/pnDVhfN/5.jpg",
+        "https://i.ibb.co/PW2wwDt/6.jpg",
+        "https://i.ibb.co/WDxxCCf/4.jpg",
+        "https://i.ibb.co/Nx4Y0nm/7.jpg",
+        "https://i.ibb.co/8g3qq0C/8.jpg"
+      ]
     }
   
   ]

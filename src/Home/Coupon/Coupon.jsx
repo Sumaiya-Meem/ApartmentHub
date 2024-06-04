@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { MdOutlineContentCopy } from "react-icons/md";
-
 import { useCopyToClipboard } from "usehooks-ts";
 import './Coupon.css'
 import useCouponAvail from "../../Hooks/useCouponAvail"
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import toast from "react-hot-toast";
+
+
 const Coupon = () => {
   const [coupon, setCoupon] = useState([]);
   const [coupons] = useCouponAvail()
