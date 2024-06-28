@@ -14,7 +14,7 @@ const Slider = () => {
       data();
     }, []);
     return (
-        <div className="-mt-[1px] -mx-[8px]">
+        <div className="-mt-[6px]">
             
       <div className="h-[450px]">
       <Carousel

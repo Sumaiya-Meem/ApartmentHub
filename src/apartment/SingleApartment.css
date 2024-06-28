@@ -1,0 +1,22 @@
+.field-gruop{
+  position: relative;
+}
+.input-field {
+  width: 95%;
+  border:none;
+  background: #f0f0f0;
+  padding-left: 40px;
+  border-radius: 3px;
+}
+
+.input-field::placeholder{
+   color:#b0b0b0;
+   font-size: 13px;
+}
+.icon{
+  position: absolute;
+  top:40%;
+  left: 0;
+  margin-left: 10px;
+  font-size: 12px;
+}

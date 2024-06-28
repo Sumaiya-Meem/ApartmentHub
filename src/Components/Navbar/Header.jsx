@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../../public/logo.png";
+import logo from "../../../public/logo2.png";
 import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import { CiLogin } from "react-icons/ci";
 import { IoIosLogOut } from "react-icons/io";
-import { useContext, useState, useEffect } from "react";
+import { useContext} from "react";
 import { ContextProvider } from "../../Context/AuthProvider";
 import toast from "react-hot-toast";
 import useUserRole from "../../Hooks/useUserRole";
@@ -14,7 +14,6 @@ const Header = () => {
   const { userRole } = useUserRole();
   const role = userRole?.role;
 
-  const [changeBg, setChangeBg] = useState(false);
 
   const handleLogout = () => {
     logOutUser().then(() => {
@@ -35,13 +34,7 @@ const Header = () => {
       <NavLink
         to="/apartment"
         className={({ isActive, isPending }) =>
-          isPending
-            ? "pending"
-            : isActive
-            ? "text-[#bc0024] font-bold menu"
-            : changeBg
-            ? "text-black"
-            : "text-white"
+          isPending ? "pending" : isActive ? "text-[#bc0024] font-bold menu" : "text-black"
         }
       >
         Apartment
@@ -49,9 +42,7 @@ const Header = () => {
       <NavLink
         to="/localview"
         className={({ isActive, isPending }) =>
-          isPending ? "pending" : isActive ? "text-[#bc0024] font-bold menu" : changeBg
-          ? "text-black"
-          : "text-white"
+          isPending ? "pending" : isActive ? "text-[#bc0024] font-bold menu" : "text-black"
         }
       >
         About Us
@@ -62,7 +53,7 @@ const Header = () => {
             role === "admin" ? "admin-dashboard" : role === "member" ? "member-profile" : "user-profile"
           }`}
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#bc0024] font-bold menu"  : changeBg ? "text-black" : "text-white"
+            isPending ? "pending" : isActive ? "text-[#bc0024] font-bold menu" : "text-black"
           }
         >
           Dashboard
@@ -71,30 +62,16 @@ const Header = () => {
     </>
   );
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY >= 56) {
-        setChangeBg(true);
-      } else {
-        setChangeBg(false);
-      }
-    };
 
-    window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return (
-    <div className="sticky top-0 z-50 -mx-[2px]">
-      <Navbar fluid rounded className={changeBg ? "navbar " : "navbar active"}>
+  return ( 
+    <div className="sticky top-0 z-50">
+      <Navbar fluid rounded className="">
         <Navbar.Brand href="/">
-          <img src={logo} className="mr-3 h-10" alt="Logo" />
-          <span className={`text-xl font-bold ${changeBg ? 'text-black' : 'text-white'} italic font-serif`}>
-            <span className={changeBg ? 'text-[#bc0024]':'text-white'} >A</span>partment
-            <span className={changeBg ? 'text-[#bc0024]':'text-white'} >H</span>ub
+          <img src={logo} className="mr-3 h-12" alt="Logo" />
+          <span className="text-xl font-bold italic font-serif">
+            <span className="text-[#bc0024]" >A</span>partment
+            <span className="text-[#bc0024]" >H</span>ub
           </span>
         </Navbar.Brand>
         <div className="flex md:order-2">

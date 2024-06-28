@@ -3,10 +3,12 @@ import logo from "../../../public/logo.png";
 import { FaDribbble, FaGooglePlay, FaInstagram, FaTwitter } from "react-icons/fa6";
 import { IoLogoApple } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa";
+import img from "../../../public/wave2.png"
 const Footers = () => {
   return (
-    <div className="mt-10 ">
-      <Footer container>
+    <div className="mt-10 bg-[#f0f0f1]">
+      <img src={img} alt="" />
+      <Footer container className="bg-[#f0f0f1]">
         <div className="w-full">
           <div className="w-full justify-between sm:flex sm:justify-center md:flex md:grid-cols-1">
             <div className="mt-10">
