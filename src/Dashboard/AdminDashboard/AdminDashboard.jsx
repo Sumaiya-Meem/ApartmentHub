@@ -5,9 +5,15 @@ import { TbHomeCheck } from "react-icons/tb";
 import { FaUserFriends } from "react-icons/fa";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Chart from "react-apexcharts";
+import { IoSearch } from "react-icons/io5";
+import './AdminDashboard.css'
+import img from "../../../public/sun.png";
+import { useContext } from "react";
+import { ContextProvider } from "../../Context/AuthProvider";
 
 const AdminDashboard = () => {
   const axiosSecure = useAxiosSecure();
+  const { user } = useContext(ContextProvider);
 
   const { data: adminData = {} } = useQuery({
     queryKey: ["admin_profile-data"],
@@ -24,7 +30,19 @@ const AdminDashboard = () => {
   return (
     <div className="w-full">
       <div className="bg-[#272738]">
-        <input type="text" />
+       <div className="flex justify-between p-2">
+          <div className="relative">
+          <input type="text"  className="bg-[#17171E] border-none rounded-3xl input-search w-[350px]" placeholder="Search"/>
+         <IoSearch className="top-3 left-1 absolute text-[#a7a6a6] text-lg ml-1"></IoSearch>
+          </div>
+          <div className="lg:mt-2 flex items-center justify-evenly gap-3">
+                <img src={img} alt="" className="h-[20px] w-[20px]"/>
+   
+            <img src={user?.photoURL} alt="" className="rounded-[50%] h-[40px] w-[40px]" />
+            
+          </div>
+       </div>
+
       </div>
       <div className="bg-[#17171E] lg:p-4">
         <h1 className="text-[#c9c8c8] text-[24px] font-medium">Dashboard</h1>
@@ -63,7 +81,7 @@ const AdminDashboard = () => {
           </div>
 
 
-          <div className="bg-[#673BB7] w-[230px] h-[140px] p-4  rounded-md mt-5  text-black flex items-center  gap-2">
+          <div className=" bg-[#d64848] w-[230px] h-[140px] p-4  rounded-md mt-5  text-black flex items-center  gap-2">
 
           <div className="bg-black text-white p-5 rounded-[50%]">
                 <FaUserFriends className="text-3xl text-white "></FaUserFriends>
@@ -78,7 +96,7 @@ const AdminDashboard = () => {
             </div>
           </div>
 
-          <div className="bg-[#d64848] w-[230px] h-[140px] p-4  rounded-md mt-5  text-black flex items-center  gap-2">
+          <div className="bg-[#673BB7] w-[230px] h-[140px] p-4  rounded-md mt-5  text-black flex items-center  gap-2">
           <div className="bg-black text-white p-5 rounded-[50%]">
                 <TbHomeCheck className="text-3xl text-white"></TbHomeCheck>
               </div>
