@@ -65,7 +65,7 @@ const Header = () => {
 
 
   return ( 
-    <div className="sticky top-0 z-50">
+    <div className="sticky top-0 z-50 shadow-md">
       <Navbar fluid rounded className="">
         <Navbar.Brand href="/">
           <img src={logo} className="mr-3 h-12" alt="Logo" />

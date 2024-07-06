@@ -126,7 +126,7 @@ const SingleApartment = () => {
               gallery showcases the stunning interiors and the attention to
               detail in every aspect of this home. The living area is perfect
               for entertaining guests or relaxing after a long day, while the
-              bedrooms provide a tranquil retreat for a restful night's sleep.
+              bedrooms provide a tranquil retreat for a restful night sleep.
               The modern kitchen is equipped with high-quality fixtures and
               ample storage, making it a joy for culinary enthusiasts. With a
               competitive rent of ${rent} per month, this apartment offers an
@@ -224,7 +224,7 @@ const SingleApartment = () => {
                 bg-[#b8b6b6] opacity-70 rounded-[50%]"
             onClick={() => nextImage(data.i)}
           >
-            {" "}
+           
             <MdKeyboardArrowRight></MdKeyboardArrowRight>
           </button>
         </Modal.Body>

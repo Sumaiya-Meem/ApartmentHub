@@ -1,5 +1,4 @@
-import { Parallax } from "react-parallax";
-import img from "../../public/local.png";
+
 import { BsHouses } from "react-icons/bs";
 import { BsBuildings } from "react-icons/bs";
 import { LiaSwimmingPoolSolid } from "react-icons/lia";
@@ -19,8 +18,8 @@ const LocalView = () => {
   
 
   return (
-    <div>
-      <Parallax
+    <div className="">
+      {/* <Parallax
         bgImage={img}
         strength={600}
         className=""
@@ -38,9 +37,9 @@ const LocalView = () => {
             and tranquility.
           </p>
         </div>
-      </Parallax>
+      </Parallax> */}
 
-      <div className="mb-12 mt-7">
+      <div className="mb-12">
         <h1 className="text-2xl  py-3 px-4">Facts and Features</h1>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-5 px-4 mt-7">
           <div className="flex gap-3 items-center">

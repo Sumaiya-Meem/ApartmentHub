@@ -7,13 +7,23 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Chart from "react-apexcharts";
 import { IoSearch } from "react-icons/io5";
 import './AdminDashboard.css'
-import img from "../../../public/sun.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContextProvider } from "../../Context/AuthProvider";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { FaSun } from "react-icons/fa";
 
 const AdminDashboard = () => {
   const axiosSecure = useAxiosSecure();
   const { user } = useContext(ContextProvider);
+  const [apartments, setApartments] = useState([]);
+
+  useEffect(() => {
+    axiosSecure .get('/apartment')
+        .then(res => {         
+            setApartments(res.data)            
+        })
+
+}, [axiosSecure])
 
   const { data: adminData = {} } = useQuery({
     queryKey: ["admin_profile-data"],
@@ -30,14 +40,14 @@ const AdminDashboard = () => {
   return (
     <div className="w-full">
       <div className="bg-[#272738]">
-       <div className="flex justify-between p-2">
+       <div className="flex justify-between items-center px-2 py-3">
           <div className="relative">
           <input type="text"  className="bg-[#17171E] border-none rounded-3xl input-search w-[350px]" placeholder="Search"/>
          <IoSearch className="top-3 left-1 absolute text-[#a7a6a6] text-lg ml-1"></IoSearch>
           </div>
           <div className="lg:mt-2 flex items-center justify-evenly gap-3">
-                <img src={img} alt="" className="h-[20px] w-[20px]"/>
-   
+               <FaSun className="text-xl text-[#6a73fa]"></FaSun>
+               <IoMdNotificationsOutline className="text-2xl text-[#6a73fa]"></IoMdNotificationsOutline>
             <img src={user?.photoURL} alt="" className="rounded-[50%] h-[40px] w-[40px]" />
             
           </div>
@@ -58,7 +68,7 @@ const AdminDashboard = () => {
             </div>
             <div className="">
               <h1 className="text-white font-[500]  text-xl font-serif">
-                Flats
+                Apartments
               </h1>
               <p className="text-[22px] font-bold text-white">
                 {adminData?.allRooms}
@@ -102,7 +112,7 @@ const AdminDashboard = () => {
               </div>
               <div className="">
               <h1 className="text-white font-[500]  text-xl font-serif">
-              Available Flats
+              Available Apartment
               </h1>
               <p className="text-[22px] font-bold text-white">
               {availableRoom}
@@ -155,6 +165,63 @@ const AdminDashboard = () => {
           </div>
         </div>
        
+        
+        <div className="bg-[#272738]  mt-7 py-4 px-2">
+        <div className="flex justify-between ">
+            <h1 className="ml-3 text-xl text-[#d6d6d6] font-medium">All Apartments</h1>
+            <button className="text-[#e6e6e6] bg-[#6a73fa] p-2 rounded-sm mr-4">+ Add new</button>
+        </div>
+        <div className="h-[1px] bg-[#464646] my-4"></div>
+        <div className="flex items-center gap-2">
+            <h1 className="text-[#aeaeae] ml-3">Show</h1>
+            <select className="bg-[#272738] border-[#414141] text-white">
+                <option>5</option>
+                <option>10</option>
+                <option>20</option>s
+            </select>
+        </div>
+        <div className="overflow-x-auto mt-5">
+        <table className="min-w-full">
+                    <thead>
+                        <tr className="border-b border-[#858585]">
+                            <th className="py-4 px-6 text-center  text-sm font-semibold text-white uppercase tracking-wider">
+                                Image
+                            </th>
+                            <th className="py-4 px-6 text-center  text-sm font-semibold text-white uppercase tracking-wider">
+                                Apartment No
+                            </th>
+                            <th className="py-4 px-6 text-center  text-sm font-semibold text-white uppercase tracking-wider">
+                                Block No
+                            </th>
+                            <th className="py-4 px-6 text-center   text-sm font-semibold text-white uppercase tracking-wider">
+                                Floor No
+                            </th>
+                            <th className="py-4 px-6 text-center   text-sm font-semibold text-white uppercase tracking-wider">
+                                Rent
+                            </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    {apartments.map((item, index) => (
+                            <tr key={index} className="">
+                                <td className="py-2 px-3  text-center">
+                                    <img src={item.apartmentImage} alt=""  className="w-[50px] h-[60px]"/>
+                                </td>
+                                <td className="py-2 px-3  text-center">{item.apartmentNo}</td>
+                                <td className="py-2 px-3 text-center">{item.blockName}</td>
+                                <td className="py-2 px-3  text-center">{item.floorNo}</td>  
+                                <td className="py-2 px-3  text-center">{item.rent}</td> 
+                            </tr>
+                        ))}
+                     
+                    </tbody>
+                </table>
+    </div>
+      </div>
+
+
       </div>
     </div>
   );
