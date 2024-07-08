@@ -3,6 +3,8 @@ import { TbHomeHand } from "react-icons/tb";
 import { IoIosPeople } from "react-icons/io";
 import { TbHomeCheck } from "react-icons/tb";
 import { FaUserFriends } from "react-icons/fa";
+import { MdEdit } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Chart from "react-apexcharts";
 import { IoSearch } from "react-icons/io5";
@@ -199,20 +201,27 @@ const AdminDashboard = () => {
                             <th className="py-4 px-6 text-center   text-sm font-semibold text-white uppercase tracking-wider">
                                 Rent
                             </th>
+                            <th className="py-4 px-6 text-center   text-sm font-semibold text-white uppercase tracking-wider">
+                            Action
+                            </th>
                             
                         </tr>
                     </thead>
                     <tbody>
                         
                     {apartments.map((item, index) => (
-                            <tr key={index} className="">
+                            <tr key={index} className="border-b border-[#6e6e6e] text-white">
                                 <td className="py-2 px-3  text-center">
-                                    <img src={item.apartmentImage} alt=""  className="w-[50px] h-[60px]"/>
+                                    <img src={item.apartmentImage} alt=""  className="w-[50px] h-[50px] rounded-sm"/>
                                 </td>
                                 <td className="py-2 px-3  text-center">{item.apartmentNo}</td>
                                 <td className="py-2 px-3 text-center">{item.blockName}</td>
                                 <td className="py-2 px-3  text-center">{item.floorNo}</td>  
                                 <td className="py-2 px-3  text-center">{item.rent}</td> 
+                                <td className="py-2 px-3  text-center">
+                                    <div className="flex items-center gap-2"><MdEdit className="bg-[#6a73fa] "></MdEdit>
+                                    <MdDelete className="bg-[#d64848]"></MdDelete></div>
+                                    </td> 
                             </tr>
                         ))}
                      
