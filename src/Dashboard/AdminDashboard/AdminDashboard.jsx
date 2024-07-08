@@ -7,7 +7,7 @@ import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Chart from "react-apexcharts";
-import { IoSearch } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5"
 import './AdminDashboard.css'
 import { useContext, useEffect, useState } from "react";
 import { ContextProvider } from "../../Context/AuthProvider";
@@ -18,14 +18,49 @@ const AdminDashboard = () => {
   const axiosSecure = useAxiosSecure();
   const { user } = useContext(ContextProvider);
   const [apartments, setApartments] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0)
+  const [result, setResult] = useState(10);
+  const [perPage, setParPage] = useState(5);
+
+  const numberOfPages = Math.ceil(result / perPage);
+
+  const arrOFPages = [...Array(numberOfPages).keys()]
 
   useEffect(() => {
-    axiosSecure .get('/apartment')
+    axiosSecure.get(`/apartment?page=${currentPage}&size=${perPage}`)
         .then(res => {         
             setApartments(res.data)            
         })
 
-}, [axiosSecure])
+}, [axiosSecure, currentPage, perPage])
+
+
+
+useEffect(() => {
+    fetch('http://localhost:5000/apartment-count')
+        .then(res => res.json())
+        .then(data => setResult(data.result))
+}, [])
+
+const handleSelectPage = (page) => {
+    setParPage(parseInt(page.target.value))
+    setCurrentPage(0)
+
+}
+
+const handlePrevPage = () => {
+    if (currentPage > 0) {
+        setCurrentPage(currentPage - 1)
+
+    }
+}
+const handleNextPage = () => {
+    if ((numberOfPages - 1) > currentPage) {
+        setCurrentPage(currentPage + 1)
+
+    }
+
+}
 
   const { data: adminData = {} } = useQuery({
     queryKey: ["admin_profile-data"],
@@ -174,14 +209,23 @@ const AdminDashboard = () => {
             <button className="text-[#e6e6e6] bg-[#6a73fa] p-2 rounded-sm mr-4">+ Add new</button>
         </div>
         <div className="h-[1px] bg-[#464646] my-4"></div>
+        {/* showing apartment data number */}
+        <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
             <h1 className="text-[#aeaeae] ml-3">Show</h1>
-            <select className="bg-[#272738] border-[#414141] text-white">
-                <option>5</option>
-                <option>10</option>
-                <option>20</option>s
-            </select>
+            <select className="bg-[#272738] border-[#414141] text-white" value={perPage} onChange={handleSelectPage} id="">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+
+                    </select>
         </div>
+        <div className="mr-14">
+            <p className="text-[#afafaf] font-[500]">Showing 1 to {perPage} of {result} entries</p>
+        </div>
+        </div>
+        {/* apartment data table */}
         <div className="overflow-x-auto mt-5">
         <table className="min-w-full">
                     <thead>
@@ -219,14 +263,30 @@ const AdminDashboard = () => {
                                 <td className="py-2 px-3  text-center">{item.floorNo}</td>  
                                 <td className="py-2 px-3  text-center">{item.rent}</td> 
                                 <td className="py-2 px-3  text-center">
-                                    <div className="flex items-center gap-2"><MdEdit className="bg-[#6a73fa] "></MdEdit>
-                                    <MdDelete className="bg-[#d64848]"></MdDelete></div>
+                                    <div className="flex items-center justify-center gap-2">
+                                        <div><MdEdit className="bg-[#6a73fa] w-[23px] h-[22px] p-[2px]  rounded-[4px]"></MdEdit></div>
+                                    <MdDelete className="bg-[#d64848] w-[23px] h-[22px] p-[2px] rounded-[4px]"></MdDelete></div>
                                     </td> 
                             </tr>
                         ))}
                      
                     </tbody>
-                </table>
+        </table>
+                
+                <div className='flex justify-end mr-10 mt-7'>
+
+                    <button className="btn-circle " onClick={handlePrevPage}>
+                        <p className="text-white bg-[#9999994d] py-1 px-[4px] rounded-md">Previous</p>
+                    </button>
+
+                    {
+                        arrOFPages.map(page => <button className={`text-[#6a73fa] mx-1 bg-[#3b3b50] px-2 font-medium rounded-md ${page === currentPage ? 'selected bg-[#6a73fa] ' : ''}`}
+                            onClick={() => setCurrentPage(page)}
+                            key={page}>{page}</button>)
+                    }
+                    
+                    <button className="mr-3" onClick={handleNextPage}><p className="text-white bg-[#9999994d] py-1 px-[5px]  rounded-md">Next</p></button>
+                </div>
     </div>
       </div>
 
