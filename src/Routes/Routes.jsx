@@ -24,6 +24,7 @@ import AdminDashboard from "../Dashboard/AdminDashboard/AdminDashboard";
 import LocalView from "../LocalView/LocalView";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import SingleApartment from "../apartment/SingleApartment";
+import AddApartment from "../Dashboard/profiles/AddApartment";
 
   
   const router = createBrowserRouter([
@@ -72,6 +73,12 @@ import SingleApartment from "../apartment/SingleApartment";
             element:<AdminPrivate><AdminProfile></AdminProfile></AdminPrivate>
 
         },
+        {
+          path:'addApartment',
+          element:<AdminPrivate><AddApartment></AddApartment></AdminPrivate>
+
+      },
+
         //member route
         {
           path:'member-profile',

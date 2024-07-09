@@ -13,6 +13,7 @@ import { useContext, useEffect, useState } from "react";
 import { ContextProvider } from "../../Context/AuthProvider";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FaSun } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const AdminDashboard = () => {
   const axiosSecure = useAxiosSecure();
@@ -206,7 +207,10 @@ const handleNextPage = () => {
         <div className="bg-[#272738]  mt-7 py-4 px-2">
         <div className="flex justify-between ">
             <h1 className="ml-3 text-xl text-[#d6d6d6] font-medium">All Apartments</h1>
+
+            <Link to="/dashboard/addApartment">
             <button className="text-[#e6e6e6] bg-[#6a73fa] p-2 rounded-sm mr-4">+ Add new</button>
+            </Link>
         </div>
         <div className="h-[1px] bg-[#464646] my-4"></div>
         {/* showing apartment data number */}
@@ -280,7 +284,7 @@ const handleNextPage = () => {
                     </button>
 
                     {
-                        arrOFPages.map(page => <button className={`text-[#6a73fa] mx-1 bg-[#3b3b50] px-2 font-medium rounded-md ${page === currentPage ? 'selected bg-[#6a73fa] ' : ''}`}
+                        arrOFPages.map(page => <button className={`text-[#6a73fa] mx-1 bg-[#3b3b50] px-2 font-medium rounded-md ${page === currentPage ? ' bg-[#6a73fa] text-white' : ''}`}
                             onClick={() => setCurrentPage(page)}
                             key={page}>{page}</button>)
                     }
