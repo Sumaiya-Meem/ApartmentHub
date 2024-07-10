@@ -37,7 +37,6 @@ const UpdateApartment = () => {
     const imgFile = new FormData();
     imgFile.append("image", data.photo[0]);
 
-    try {
       const res = await axios.post(img_hosting_api, imgFile, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -63,10 +62,6 @@ const UpdateApartment = () => {
           }
         });
       }
-    } catch (error) {
-      console.error("Error uploading image:", error);
-      toast.error("Failed to upload image");
-    }
   };
 
   return (
