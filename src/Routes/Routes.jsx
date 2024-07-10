@@ -25,6 +25,7 @@ import LocalView from "../LocalView/LocalView";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import SingleApartment from "../apartment/SingleApartment";
 import AddApartment from "../Dashboard/profiles/AddApartment";
+import UpdateApartment from "../Dashboard/profiles/UpdateApartment";
 
   
   const router = createBrowserRouter([
@@ -107,7 +108,7 @@ import AddApartment from "../Dashboard/profiles/AddApartment";
         path:'/dashboard/',
         element: <UserPrivate><Announcement></Announcement></UserPrivate>,
         
-    },
+       },
        
         
 
@@ -116,6 +117,11 @@ import AddApartment from "../Dashboard/profiles/AddApartment";
           path:'admin-dashboard',
           element:<AdminPrivate><AdminDashboard></AdminDashboard></AdminPrivate>
 
+      },
+      {
+        path: 'updateApartment/:id',
+        element: <AdminPrivate><UpdateApartment></UpdateApartment></AdminPrivate>,
+        loader: ({ params }) => fetch(`http://localhost:5000/apartment/${params.id}`)
       },
         {
           path: 'make-announce',
