@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -15,6 +15,7 @@ const UpdateApartment = () => {
     formState: { errors },
   } = useForm();
   const axiosSecure = useAxiosSecure();
+  const navigate = useNavigate();
 
   const [imagePreview, setImagePreview] = useState(apartmentImage);
 
@@ -44,9 +45,8 @@ const UpdateApartment = () => {
     if (data.photo.length > 0) {
       const imgFile = new FormData();
       imgFile.append("image", data.photo[0]);
-      console.log("image file is", imgFile);
+//       console.log("image file is", imgFile);
 
-      try {
         const res = await axios.post(img_hosting_api, imgFile, {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -59,15 +59,12 @@ const UpdateApartment = () => {
         if (img_url) {
           updatedApartment.apartmentImage = img_url;
         }
-      } catch (error) {
-        console.error("Error uploading image:", error);
-        toast.error("Failed to upload image");
-      }
     }
 
     axiosSecure.put(`/apartment/${apartment._id}`, updatedApartment).then((res) => {
       if (res.data.acknowledged) {
         toast.success("Apartment updated successfully");
+        navigate("/dashboard/admin-dashboard");
       }
     });
   };
