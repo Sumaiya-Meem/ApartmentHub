@@ -12,7 +12,6 @@ const UpdateApartment = () => {
   const {
     handleSubmit,
     register,
-    reset,
     formState: { errors },
   } = useForm();
   const axiosSecure = useAxiosSecure();
@@ -34,34 +33,43 @@ const UpdateApartment = () => {
   };
 
   const onSubmit = async (data) => {
-    const imgFile = new FormData();
-    imgFile.append("image", data.photo[0]);
+    const updatedApartment = {
+      floorNo: data.floorNo,
+      blockName: data.blockName,
+      apartmentNo: data.apartmentNo,
+      rent: data.rent,
+      apartmentImage: apartmentImage,
+    };
 
-      const res = await axios.post(img_hosting_api, imgFile, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+    if (data.photo.length > 0) {
+      const imgFile = new FormData();
+      imgFile.append("image", data.photo[0]);
+      console.log("image file is", imgFile);
 
-      const img_url = res?.data?.data?.display_url;
-      console.log("img url is", img_url);
-
-      if (img_url) {
-        const updatedApartment = {
-          apartmentImage: img_url,
-          floorNo: data.floorNo,
-          blockName: data.blockName,
-          apartmentNo: data.apartmentNo,
-          rent: data.rent,
-        };
-
-        axiosSecure.put(`/apartment/${apartment._id}`, updatedApartment).then((res) => {
-          if (res.data.acknowledged) {
-            toast.success("Apartment updated successfully");
-            reset();
-          }
+      try {
+        const res = await axios.post(img_hosting_api, imgFile, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         });
+
+        const img_url = res?.data?.data?.display_url;
+        console.log("img url is", img_url);
+
+        if (img_url) {
+          updatedApartment.apartmentImage = img_url;
+        }
+      } catch (error) {
+        console.error("Error uploading image:", error);
+        toast.error("Failed to upload image");
       }
+    }
+
+    axiosSecure.put(`/apartment/${apartment._id}`, updatedApartment).then((res) => {
+      if (res.data.acknowledged) {
+        toast.success("Apartment updated successfully");
+      }
+    });
   };
 
   return (
@@ -138,8 +146,9 @@ const UpdateApartment = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-bold mb-2">Update Apartment Image</label>
-            <img src={imagePreview} alt="Apartment Preview" className="w-1/2 mb-2" />
+            <h1>Apartment Image</h1>
+            <img src={imagePreview} alt="Apartment Preview" className="w-[300px] my-3" />
+            <label className="block text-sm font-bold mb-2">Change Apartment Image</label>
             <input
               type="file"
               id="photo"
