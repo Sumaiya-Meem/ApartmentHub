@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import useApartment from "../../Hooks/useApartment";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { IoMoonSharp } from "react-icons/io5";
 
 const AdminDashboard = () => {
   const axiosSecure = useAxiosSecure();
@@ -101,20 +102,45 @@ const AdminDashboard = () => {
     });
   };
 
+  const [mode,setMode]=useState("dark");
+
+  function changeTheme () {
+    const html=document.documentElement;
+
+    if(mode=="dark"){
+      html.classList.remove("dark");
+      html.classList.add("light");
+      setMode("light");
+    }
+    else{
+      html.classList.remove("light");
+      html.classList.add("dark");
+      setMode("dark");
+    }
+  }
+
   return (
     <div className="w-full">
-      <div className="bg-[#272738]">
+      <div className="dark:bg-[#272738] bg-[#fff]">
         <div className="flex justify-between items-center px-2 py-3">
           <div className="relative">
             <input
               type="text"
-              className="bg-[#17171E] border-none rounded-3xl input-search w-[350px]"
+              className="dark:bg-[#17171E] bg-[#f5f5f5] border-none rounded-3xl input-search w-[350px]"
               placeholder="Search"
             />
             <IoSearch className="top-3 left-1 absolute text-[#a7a6a6] text-lg ml-1"></IoSearch>
           </div>
           <div className="lg:mt-2 flex items-center justify-evenly gap-3">
-            <FaSun className="text-xl text-[#6a73fa]"></FaSun>
+            <button onClick={changeTheme}>
+            {mode =="dark" ?
+              <FaSun className="text-xl text-[#6a73fa]"></FaSun>
+              :
+              <IoMoonSharp className="text-xl text-[#6a73fa]"></IoMoonSharp>
+            }
+            
+            </button>
+
             <IoMdNotificationsOutline className="text-2xl text-[#6a73fa]"></IoMdNotificationsOutline>
             <img
               src={user?.photoURL}
@@ -124,10 +150,10 @@ const AdminDashboard = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#17171E] lg:p-4">
-        <h1 className="text-[#c9c8c8] text-[24px] font-medium">Dashboard</h1>
+      <div className="dark:bg-[#17171E] bg-[#f5f5f5] lg:p-4">
+        <h1 className="dark:text-[#c9c8c8] text-[#474747]  text-[24px] font-medium">Dashboard</h1>
         <p className="text-[#6a7a97]">
-          Home / <span className="text-[#6a7a97] font-medium">Dashboard</span>{" "}
+          Home / <span className="dark:text-[#6a7a97] text-blue-500 font-medium">Dashboard</span>
         </p>
 
         <div className="flex flex-col md:flex-row items-center ">
@@ -188,7 +214,7 @@ const AdminDashboard = () => {
               </div>
             </div>
           </div>
-          <div className="bg-[#272738] h-[320px] flex-1 mt-4">
+          <div className="dark:bg-[#272738] bg-[#fff] h-[320px] flex-1 mt-4">
             <Chart
               type="donut"
               width={400}
@@ -224,13 +250,7 @@ const AdminDashboard = () => {
                 colors: ["#009f4d", "#f48924", "#0085ad", "#004b79", "#fd5c63"],
                 legend: {
                   labels: {
-                    colors: [
-                      "#f5f5f5",
-                      "#f5f5f5",
-                      "#f5f5f5",
-                      "#f5f5f5",
-                      "#f5f5f5",
-                    ],
+                    colors: mode === "dark" ? "#f5f5f5" : "#000",
                   },
                 },
               }}
@@ -238,25 +258,25 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        <div className="bg-[#272738]  mt-7 py-4 px-2">
+        <div className="dark:bg-[#272738] bg-[#fff]  mt-7 py-4 px-2">
           <div className="flex justify-between ">
-            <h1 className="ml-3 text-xl text-[#d6d6d6] font-medium">
+            <h1 className="ml-3 text-xl dark:text-[#d6d6d6] text-[#000] font-medium">
               All Apartments
             </h1>
 
             <Link to="/dashboard/addApartment">
-              <button className="text-[#e6e6e6] bg-[#6a73fa] p-2 rounded-sm mr-4">
+              <button className="dark:text-[#e6e6e6] text-white bg-[#6a73fa] p-2 rounded-sm mr-4">
                 + Add new
               </button>
             </Link>
           </div>
-          <div className="h-[1px] bg-[#464646] my-4"></div>
+          <div className="h-[1px] dark:bg-[#464646] bg-[#d6d5d5]  my-4"></div>
           {/* showing apartment data number */}
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <h1 className="text-[#aeaeae] ml-3">Show</h1>
+              <h1 className="dark:text-[#aeaeae] text-black ml-3">Show</h1>
               <select
-                className="bg-[#272738] border-[#414141] text-white"
+                className="dark:bg-[#272738] border-[#414141] dark:text-white"
                 value={perPage}
                 onChange={handleSelectPage}
                 id=""
@@ -268,7 +288,7 @@ const AdminDashboard = () => {
               </select>
             </div>
             <div className="mr-14">
-              <p className="text-[#afafaf] font-[500]">
+              <p className="dark:text-[#afafaf] text-black font-[500]">
                 Showing 1 to {perPage} of {result} entries
               </p>
             </div>
@@ -278,22 +298,22 @@ const AdminDashboard = () => {
             <table className="min-w-full">
               <thead>
                 <tr className="border-b border-[#858585]">
-                  <th className="py-4 px-6 text-center  text-sm font-semibold text-white uppercase tracking-wider">
+                  <th className="py-4 px-6 text-center  text-sm font-semibold dark:text-white uppercase tracking-wider">
                     Image
                   </th>
-                  <th className="py-4 px-6 text-center  text-sm font-semibold text-white uppercase tracking-wider">
+                  <th className="py-4 px-6 text-center  text-sm font-semibold dark:text-white uppercase tracking-wider">
                     Apartment No
                   </th>
-                  <th className="py-4 px-6 text-center  text-sm font-semibold text-white uppercase tracking-wider">
+                  <th className="py-4 px-6 text-center  text-sm font-semibold dark:text-white uppercase tracking-wider">
                     Block No
                   </th>
-                  <th className="py-4 px-6 text-center   text-sm font-semibold text-white uppercase tracking-wider">
+                  <th className="py-4 px-6 text-center   text-sm font-semibold dark:text-white uppercase tracking-wider">
                     Floor No
                   </th>
-                  <th className="py-4 px-6 text-center   text-sm font-semibold text-white uppercase tracking-wider">
+                  <th className="py-4 px-6 text-center   text-sm font-semibold dark:text-white uppercase tracking-wider">
                     Rent
                   </th>
-                  <th className="py-4 px-6 text-center   text-sm font-semibold text-white uppercase tracking-wider">
+                  <th className="py-4 px-6 text-center   text-sm font-semibold dark:text-white uppercase tracking-wider">
                     Action
                   </th>
                 </tr>
@@ -302,7 +322,7 @@ const AdminDashboard = () => {
                 {apartments.map((item, index) => (
                   <tr
                     key={index}
-                    className="border-b border-[#6e6e6e] text-white"
+                    className="border-b border-[#6e6e6e] dark:text-white"
                   >
                     <td className="py-2 px-3  text-center">
                       <img
@@ -319,15 +339,19 @@ const AdminDashboard = () => {
                     <td className="py-2 px-3  text-center">{item.rent}</td>
                     <td className="py-2 px-3  text-center">
                       <div className="flex items-center justify-center gap-2">
+                        <div>
                         <Link to={`/dashboard/updateApartment/${item._id}`}>
                           <button>
-                            <MdEdit className="bg-[#6a73fa] w-[23px] h-[22px] p-[2px] rounded-[4px]"></MdEdit>
+                            <MdEdit className="bg-[#6a73fa] w-[23px] text-white  h-[22px] p-[2px] rounded-[4px]"></MdEdit>
                           </button>
                         </Link>
+                        </div>
 
+                        <div>
                         <button onClick={() => handleDelete(item._id)}>
-                          <MdDelete className="bg-[#d64848] w-[23px] h-[22px] p-[2px] rounded-[4px]"></MdDelete>
+                          <MdDelete className="bg-[#d64848] w-[23px] text-white h-[22px] p-[2px] rounded-[4px]"></MdDelete>
                         </button>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -337,7 +361,7 @@ const AdminDashboard = () => {
 
             <div className="flex justify-end mr-10 mt-7">
               <button className="btn-circle " onClick={handlePrevPage}>
-                <p className="text-white bg-[#9999994d] py-1 px-[4px] rounded-md">
+                <p className="text-white dark:bg-[#9999994d]  bg-[#1514144d] py-1 px-[4px] rounded-md">
                   Previous
                 </p>
               </button>
@@ -355,7 +379,7 @@ const AdminDashboard = () => {
               ))}
 
               <button className="mr-3" onClick={handleNextPage}>
-                <p className="text-white bg-[#9999994d] py-1 px-[5px]  rounded-md">
+                <p className="text-white dark:bg-[#9999994d] bg-[#6a73fa] py-1 px-[5px]  rounded-md">
                   Next
                 </p>
               </button>
