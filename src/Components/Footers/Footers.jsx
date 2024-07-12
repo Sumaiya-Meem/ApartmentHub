@@ -6,9 +6,9 @@ import { FaFacebook } from "react-icons/fa";
 import img from "../../../public/wave2.png"
 const Footers = () => {
   return (
-    <div className="mt-10 bg-[#f0f0f1]">
+    <div className="mt-10 dark:bg-[#f0f0f1]">
       <img src={img} alt="" />
-      <Footer container className="bg-[#f0f0f1]">
+      <Footer container className="dark:bg-[#f0f0f1]">
         <div className="w-full">
           <div className="w-full justify-between sm:flex sm:justify-center md:flex md:grid-cols-1">
             <div className="mt-10">
@@ -19,7 +19,7 @@ const Footers = () => {
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center  gap-10 sm:mt-2  ">
               <div>
-                <Footer.Title title="Address" className="mt-4 md:mt-0 text-lg text-center md:text-left ml-0 md:ml-4" />
+                <Footer.Title title="Address" className="mt-4 md:mt-0 text-lg text-center md:text-left ml-0 md:ml-4 text-black" />
                 <Footer.LinkGroup col className="ml-0 md:ml-4">
                   <Footer.Link href="#">
                     28 , Islam Centre, Mirpur, Dhaka

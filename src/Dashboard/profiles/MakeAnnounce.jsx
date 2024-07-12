@@ -25,32 +25,32 @@ const MakeAnnounce = () => {
     };
 
     return (
-        <div>
-            <div className="max-w-md mx-auto mt-8 p-8 border rounded shadow-lg">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <h2 className="text-3xl font-semibold mb-4">Make Announcement</h2>
+        <div className=' pt-12'>
+            <div className="dark:bg-[#272738] max-w-md mx-auto pt-8 p-8 border rounded shadow-lg ">
+                <form onSubmit={handleSubmit(onSubmit)} className=''>
+                    <h2 className="text-3xl font-semibold mb-4 text-[#6a73fa] ">Make Announcement</h2>
 
                     <div className="mb-4">
-                        <label htmlFor="title" className="block text-gray-700 text-sm font-bold mb-2">
+                        <label htmlFor="title" className="block dark:text-[#d9d9d9] text-gray-700 text-sm font-bold mb-2">
                             Title
                         </label>
                         <input
                             type="text"
                             id="title"
                             {...register('title', { required: 'Title is required' })}
-                            className="w-full border p-2 rounded focus:outline-none focus:ring focus:border-blue-300"
+                            className="w-full border p-2 rounded focus:outline-none focus:ring focus:border-blue-300 dark:bg-[#17171E] "
                         />
                     </div>
 
                   
                     <div className="mb-4">
-                        <label htmlFor="description" className="block text-gray-700 text-sm font-bold mb-2">
+                        <label htmlFor="description" className="block dark:text-[#d9d9d9]  text-gray-700 text-sm font-bold mb-2">
                             Description
                         </label>
                         <textarea
                             id="description"
                             {...register('description', { required: 'Description is required' })}
-                            className="w-full border p-2 rounded focus:outline-none focus:ring focus:border-blue-300"
+                            className="w-full border p-2 rounded focus:outline-none focus:ring focus:border-blue-300 dark:bg-[#17171E]"
                         />
                     </div>
 

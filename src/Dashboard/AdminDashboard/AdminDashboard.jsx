@@ -104,20 +104,29 @@ const AdminDashboard = () => {
 
   const [mode,setMode]=useState("dark");
 
-  function changeTheme () {
-    const html=document.documentElement;
-
-    if(mode=="dark"){
+  function changeTheme() {
+    const html = document.documentElement;
+  
+    if (mode === "dark") {
       html.classList.remove("dark");
       html.classList.add("light");
       setMode("light");
-    }
-    else{
+      localStorage.setItem('theme', 'light');
+    } else {
       html.classList.remove("light");
       html.classList.add("dark");
       setMode("dark");
+      localStorage.setItem('theme', 'dark');
     }
   }
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const html = document.documentElement;
+    html.classList.add(savedTheme);
+    setMode(savedTheme);
+  }, []);
+  
+  
 
   return (
     <div className="w-full">

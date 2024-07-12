@@ -25,7 +25,7 @@ const LayoutDA = () => {
                 
             
 
-            <div className="lg:col-span-8 mt-9 md:mt-0 col-span-10 md:col-span-7"><Outlet></Outlet></div>
+            <div className="lg:col-span-8 mt-9 md:mt-0 col-span-10 md:col-span-7 dark:bg-[#17171E]"><Outlet></Outlet></div>
         </div>
     );
 };

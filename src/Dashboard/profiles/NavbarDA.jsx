@@ -18,7 +18,7 @@ const NavbarDA = () => {
 
 
     return (
-        <div  className="lg:min-h-screen h-full  bg-[#212130]">
+        <div  className="lg:min-h-screen h-full  dark:bg-[#212130]  bg-white">
             <div className="mb-10 flex items-center justify-center text-white bg-[#6a73fa] h-[70px]">
                 <div><img src={logo} alt=""  className='h-[60px] w-[60px]'/></div>
                 <div><h1 className='uppercase font-semibold text-xl '>Apartment Hub</h1></div>
@@ -27,21 +27,21 @@ const NavbarDA = () => {
                 role === 'admin' ?
 
                     <>
-                        <NavLink  to='/dashboard/admin-dashboard'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 text-[#b3b3b3] border-b border-gray-600 uppercase font-semibold'><MdOutlineDashboard />Dashboard</div></NavLink>
+                        <NavLink  to='/dashboard/admin-dashboard'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 dark:text-[#b3b3b3] border-b border-gray-600 uppercase font-semibold'><MdOutlineDashboard />Dashboard</div></NavLink>
 
                        
 
-                        <NavLink to='/dashboard/make-announce'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><GrAnnounce></GrAnnounce> Make Announcement</div></NavLink>
+                        <NavLink to='/dashboard/make-announce'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 dark:text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><GrAnnounce></GrAnnounce> Make Announcement</div></NavLink>
 
-                        <NavLink to='/dashboard/manage-member'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><IoPeopleSharp />Manage Members</div></NavLink>
+                        <NavLink to='/dashboard/manage-member'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 dark:text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><IoPeopleSharp />Manage Members</div></NavLink>
 
-                        <NavLink to='/dashboard/agreement'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><PiGitPullRequestBold></PiGitPullRequestBold>Agreement Request</div></NavLink>
+                        <NavLink to='/dashboard/agreement'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 dark:text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><PiGitPullRequestBold></PiGitPullRequestBold>Agreement Request</div></NavLink>
 
-                        <NavLink to='/dashboard/manage-coupon'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><RiCoupon2Fill></RiCoupon2Fill> Manage Coupons</div></NavLink>
+                        <NavLink to='/dashboard/manage-coupon'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 dark:text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><RiCoupon2Fill></RiCoupon2Fill> Manage Coupons</div></NavLink>
                         
-                        <NavLink  to='/dashboard/admin-profile'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 text-[#b3b3b3]  border-y border-gray-600 uppercase font-semibold'><CgProfile /> View Profile</div></NavLink>
+                        <NavLink  to='/dashboard/admin-profile'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 dark:text-[#b3b3b3]  border-y border-gray-600 uppercase font-semibold'><CgProfile /> View Profile</div></NavLink>
                         
-                        <NavLink to='/'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><FaHome /> Home</div></NavLink>
+                        <NavLink to='/'><div className='text-base items-center flex gap-3 py-2 lg:pl-4 md:pl-3 dark:text-[#b3b3b3]  border-b border-gray-600 uppercase font-semibold'><FaHome /> Home</div></NavLink>
                     </>
 
 
