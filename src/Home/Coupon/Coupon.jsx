@@ -45,7 +45,7 @@ const Coupon = () => {
             <div className="flex flex-col items-center gap-2 border-[2px] border-dashed border-[#bc0024] p-2">
               <div className="flex gap-2 items-center">
               <div
-                className=" text-[#bc0024] "
+                className=" text-[#bc0024] cursor-pointer"
                 onClick={() => handleCopy()}
               >
                 <MdOutlineContentCopy className="text-xl"></MdOutlineContentCopy>
