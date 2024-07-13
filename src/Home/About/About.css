@@ -1,6 +1,6 @@
 .aboutImg {
-    width: 800px;
-    height: 400px;
+    width: 400px;
+    height: 350px;
     position: relative;
 
 }
@@ -17,10 +17,9 @@
 .smImg {
     position: absolute;
     width: 200px;
-    width: 324px;
-    right: -74px;
+    left: -74px;
     bottom: -68px;
     border-radius: 10px;
-    border: 7px solid black;
+    border: 7px solid rgb(60, 60, 60);
 }
 

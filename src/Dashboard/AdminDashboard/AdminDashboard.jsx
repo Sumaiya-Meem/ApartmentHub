@@ -152,7 +152,7 @@ const AdminDashboard = () => {
 
             <IoMdNotificationsOutline className="text-2xl text-[#6a73fa]"></IoMdNotificationsOutline>
             <img
-              src={user?.photoURL}
+            src={user?.photoURL}
               alt=""
               className="rounded-[50%] h-[40px] w-[40px]"
             />

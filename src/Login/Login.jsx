@@ -5,7 +5,6 @@ import toast from 'react-hot-toast';
 import useAxiosPublic from "../Hooks/useAxiosPublic";
 import { ContextProvider } from "../Context/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
-import { Typewriter } from 'react-simple-typewriter';
 import bg from "../../public/bg1.avif";
 
 const Login = () => {
@@ -59,15 +58,7 @@ const Login = () => {
             <div className="lg:w-[50%] mx-auto w-full h-screen flex justify-center items-center">
                 <form className="bg-white lg:w-[70%] px-9 py-3 shadow-lg rounded-lg" onSubmit={handleSubmit(onSubmit)}>
                     <h2 className="text-2xl font-bold mb-4 text-blue-800 text-center">
-                        <Typewriter
-                            words={['Login Now']}
-                            loop={true}
-                            cursor
-                            cursorStyle='_'
-                            typeSpeed={50}
-                            deleteSpeed={50}
-                            delaySpeed={1000}
-                        />
+                        Login Now !
                     </h2>
 
                     <div className="mb-4">

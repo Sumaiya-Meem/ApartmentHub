@@ -1,12 +1,11 @@
 import { Parallax } from "react-parallax";
 import about1 from "../../../public/about1.jpg";
-import about2 from "../../../public/about2.avif";
-import about3 from "../../../public/about3.jpg";
-import "./About.css";
+
 import { FaLocationDot } from "react-icons/fa6";
 import Aos from "aos";
 import 'aos/dist/aos.css'
 import { useEffect } from "react";
+import { Typewriter } from "react-simple-typewriter";
 const About = () => {
   useEffect(()=> {
     Aos.init()     
@@ -15,27 +14,33 @@ const About = () => {
   return (
     <div>
       <div className="text-center my-10 text-[#bc0024] text-2xl font-bold font-serif">
-        <h1>About The Building</h1>
+        <h1>
+        <Typewriter
+                      words={['About The Building']}
+                      loop={true}
+                      cursor
+                      cursorStyle='..'
+                      typeSpeed={50}
+                      deleteSpeed={50}
+                      delaySpeed={1000}
+                    />
+                </h1>
       </div>
       <Parallax bgImage={about1} strength={500} className="">
-        <div className="h-[440px] flex flex-col items-center justify-center text-white bg-gradient-to-t from-[#151515] to-[rgba(21,21,21,0)] ">
-          <h1 className="text-4xl font-serif text-[#bc0022d6] mb-4">
+        <div className="h-[440px] flex flex-col items-center justify-center  bg-gradient-to-t from-[#060606] to-[rgba(21,21,21,0.4)] ">
+          <h1 className="text-4xl font-serif text-[#fff] mb-4">
             Apartment Hub
           </h1>
-          <p className="w-2/3">
+          <p className="w-2/3 text-[#c7c7c7]">
             Meticulous design with striking appearance. A masterwork of
             postmodernism. Situated near the diplomatic zones of Mahamadpur and
-            Mirpur, in the center of Mirpur 10.
+            Mirpur, in the center of Mirpur 10. This area boasts a blend of
+                    residential and commercial vibrancy.
           </p>
         </div>
       </Parallax>
-      <div className="mt-10 flex justify-center">
-        <div className="aboutImg hidden md:block" data-aos="zoom-in-up">
-          <img src={about2} alt="" className="bigImg rounded-md " />
-          <img src={about3} alt="" className="smImg" />
-        </div>
-        </div>
-        <div className="mt-28 space-y-5 ml-10">
+     
+        <div className="mt-10 space-y-5 ml-10">
           <h1 className="text-xl font-serif font-bold text-gray-800">
             ApartmentHub: Your Premier Living Destination
           </h1>

@@ -45,12 +45,12 @@ const Footers = () => {
                   From App Store or Google Play
                 
                   <Button color="" className="mt-3 dark:text-[#e6e6e6] text-white bg-[#5a62d6]">
-        <FaGooglePlay className="mr-2 h-5 w-5 text-black" />
+        <FaGooglePlay className="mr-2 h-5 w-5 " />
      Google Play
       </Button>
              
-                  <Button color="" className="mt-3 dark:text-[#e6e6e6] text-white bg-[#5a62d6]">
-        <IoLogoApple className="mr-2 h-5 w-5 dark:text-[#1a1a1a]" />
+                  <Button color="" className="mt-3  text-white bg-[#5a62d6]">
+        <IoLogoApple className="mr-2 h-5 w-5  text-white" />
        App store
       </Button>
                   </Footer.Link>

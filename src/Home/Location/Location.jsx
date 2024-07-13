@@ -1,6 +1,7 @@
 import { Button } from "flowbite-react";
 import { FaLocationDot } from "react-icons/fa6";
 import { GiClick } from "react-icons/gi";
+import { Typewriter } from "react-simple-typewriter";
 const Location = () => {
   return (
     <div>
@@ -34,15 +35,24 @@ const Location = () => {
             contemporary living experience at the heart of the city. With its
             modern amenities and convenient location, Apartment Hub is the
             perfect destination for urban dwellers seeking comfort and style.
-            Rising 200 feet with 100 apartments within its 92,860 sqm expanse
+            Rising 200 feet with 100 apartments within its 92,860 sqm expanse,
+            this residential marvel is designed to cater to your every need. Enjoy the state-of-the-art fitness center, a rooftop garden with panoramic city views, and a community lounge perfect for social gatherings. Apartment Hub also features secure parking, 24/7 concierge services, and proximity to major shopping, dining, and entertainment options, ensuring that residents have everything they need right at their doorstep.
           </p>
 
           <div className="flex items-center gap-2 ">
           <a  href="https://www.google.com/maps/place/Mirpur+10,+Dhaka/@23.7933037,90.3695718,15z/data=!3m1!4b1!4m5!3m4!1s0x3755c6be4a4eef2d:0x44a9470e01d82f77!8m2!3d23.7933037!4d90.3776981" target="_blank" rel="noreferrer">
             
-          <Button color="light" className="bg-[#f6ecec] text-[#bc0024]">
+          <Button color="" className="bg-[#bc0024]  text-[#fff]">
               <GiClick className="mr-2 h-5 w-5 " />
-              OPEN MAP
+              <Typewriter
+                            words={['OPEN MAP']}
+                            loop={true}
+                            cursor
+                            cursorStyle='..'
+                            typeSpeed={50}
+                            deleteSpeed={50}
+                            delaySpeed={1000}
+                        /> 
             </Button>
             </a>
 
