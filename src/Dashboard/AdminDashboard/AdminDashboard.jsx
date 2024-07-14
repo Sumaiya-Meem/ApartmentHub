@@ -303,7 +303,7 @@ const AdminDashboard = () => {
             </div>
           </div>
           {/* apartment data table */}
-          <div className="overflow-x-auto mt-5">
+          <div className="mt-5 overflow-auto">
             <table className="min-w-full">
               <thead>
                 <tr className="border-b border-[#858585]">

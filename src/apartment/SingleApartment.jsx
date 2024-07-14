@@ -52,36 +52,38 @@ const SingleApartment = () => {
   };
   return (
     <div>
-      <div className="bg-[#54595F] w-full ">
-        <div className="w-[85%] mx-auto pt-4  bg-[#54595F]">
-          <div className="grid grid-cols-3 text-white justify-between mb-3">
-            <h1 className="font-semibold">
+      <div className="bg-slate-800 w-full ">
+        <div className="w-[85%] mx-auto pt-4  bg-slate-800">
+          <div className="grid grid-cols-1  lg:grid-cols-3 text-white justify-between mb-3">
+            <h1 className="font-semibold mb-5 lg:mb-0 text-center lg:text-left">
               Awesome family <br />
               Apartment
             </h1>
 
-            <div className="grid grid-cols-4 gap-7">
+            <div className="grid grid-cols-3 md:grid-cols-4 gap-7">
               <div className="flex flex-col items-center">
-                <MdOutlineBed className="text-2xl text-[#23A455]"></MdOutlineBed>
+                <MdOutlineBed className="text-2xl text-[#6d76f5]"></MdOutlineBed>
                 <p className="text-gray-300">4 Beds</p>
               </div>
               <div className="flex flex-col items-center">
-                <FaBath className="text-2xl text-[#23A455]"></FaBath>
+                <FaBath className="text-2xl text-[#6d76f5]"></FaBath>
                 <p className="text-gray-300">3 Baths</p>
               </div>
               <div className="flex flex-col items-center">
-                <MdOutlineGarage className="text-2xl text-[#23A455]"></MdOutlineGarage>
+                <MdOutlineGarage className="text-2xl text-[#6d76f5]"></MdOutlineGarage>
                 <p className="text-gray-300">2 Garage</p>
               </div>
               <div className="flex flex-col items-center">
-                <RxRulerSquare className="text-2xl text-[#23A455]"></RxRulerSquare>
+                <RxRulerSquare className="text-2xl text-[#6d76f5]"></RxRulerSquare>
                 <p className="text-gray-300">3556sq ft</p>
               </div>
             </div>
-
-            <h1>$345</h1>
+             
+             <div className="lg:ml-[100px] mt-8 lg:mt-0 text-center "><h1 className="font-serif">Rent</h1>
+             <h1 className="text-sm">$345</h1></div>
           </div>
-          <div className="flex gap-4">
+
+          <div className="flex flex-col lg:flex-row gap-4">
             <div className="">
               <img
                 src="https://i.ibb.co/6DpsMgn/pexels-jvdm-1457842.jpg"
@@ -91,7 +93,7 @@ const SingleApartment = () => {
             </div>
 
             <div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-2">
                 {images.map((img, i) => (
                   <img
                     src={img}
@@ -108,7 +110,7 @@ const SingleApartment = () => {
 
         
         </div>
-         <div className="flex relative bg-white mt-2">
+         <div className="flex flex-col lg:flex-row lg:relative bg-white mt-2">
              {/* Description */}
           <div className="w-[60%] ml-[90px]">
             <h1 className="text-xl font-semibold my-3">Description</h1>
@@ -136,7 +138,7 @@ const SingleApartment = () => {
               outstanding residence.
             </p>
           </div>
-          <div className=" bg-white mt-3 px-2 py-4 absolute right-[136px] -top-[70%] shadow-xl">
+          <div className=" bg-white mt-3 px-2 py-4  lg:absolute lg:right-[136px] lg:-top-[70%] shadow-xl">
                 <div className="flex justify-between">
                   <div className="text-sm text-[#666565]">
                     <h1>Call: 015*******</h1>
