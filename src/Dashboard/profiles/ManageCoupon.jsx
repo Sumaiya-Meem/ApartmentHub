@@ -55,7 +55,8 @@ const ManageCoupon = () => {
                 <div className="bg-white rounded-lg overflow-auto">
                     <div>
                         <div className="flex justify-center mb-5">
-                            <Button className="btn text-center bg-blue-800" onClick={() => document.getElementById('my_modal_5').showModal()}>Add</Button >
+                            <button className="btn text-center text-white rounded font-serif bg-[#646df0] p-2 mt-1" 
+                            onClick={() => document.getElementById('my_modal_5').showModal()}>+Add</button >
                         </div>
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle w-[600px] rounded-md shadow-md">
                             <div className="modal-box">

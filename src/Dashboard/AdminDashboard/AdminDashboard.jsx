@@ -307,7 +307,8 @@ const AdminDashboard = () => {
             <table className="min-w-full">
               <thead>
                 <tr className="border-b border-[#858585]">
-                  <th className="py-4 px-6 text-center  text-sm font-semibold dark:text-white uppercase tracking-wider">
+                  <th className="py-4 px-6 text-center  text-sm font-semibold
+                   dark:text-white uppercase tracking-wider">
                     Image
                   </th>
                   <th className="py-4 px-6 text-center  text-sm font-semibold dark:text-white uppercase tracking-wider">

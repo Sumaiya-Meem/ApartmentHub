@@ -145,7 +145,7 @@ const UpdateApartment = () => {
           <div className="mb-4">
             <h1>Apartment Image</h1>
             <img src={imagePreview} alt="Apartment Preview" className="w-[300px] my-3" />
-            <label className="block text-sm font-bold mb-2">Change Apartment Image</label>
+            <label className="block text-sm font-bold mb-2">Update Apartment Image</label>
             <input
               type="file"
               id="photo"

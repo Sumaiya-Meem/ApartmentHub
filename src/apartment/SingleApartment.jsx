@@ -138,7 +138,7 @@ const SingleApartment = () => {
               outstanding residence.
             </p>
           </div>
-          <div className=" bg-white mt-3 px-2 py-4  lg:absolute lg:right-[136px] lg:-top-[70%] shadow-xl">
+          <div className=" bg-white mt-3 px-2 py-4  mx-6 lg:mx-0 lg:absolute lg:right-[136px] lg:-top-[70%] shadow-xl">
                 <div className="flex justify-between">
                   <div className="text-sm text-[#666565]">
                     <h1>Call: 015*******</h1>
