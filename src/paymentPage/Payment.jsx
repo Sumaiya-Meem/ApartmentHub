@@ -59,8 +59,8 @@ const Payment = () => {
 
     return (
         <div className="md:w-[80%] my-10 mx-auto">
-            <div className="border-2 py-5">
-                <h1 className="text-xl font-semibold text-center my-5">All Rent: {rent}</h1>
+            <div className="border-2 py-5 dark:bg-white">
+                <h1 className="text-xl font-semibold text-center my-5 ">All Rent: {rent}</h1>
                 <div className="mb-24">
                      <form onSubmit={handleSubmit(onSubmit)} className="flex justify-center gap-5">
                         <input {...register("coupon")} className="bg-gray-200 py-1 px-3 w-[35%]" type="text" />

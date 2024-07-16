@@ -78,6 +78,7 @@ const Apartment = () => {
               <option value="15">15</option>
               <option value="20">20</option>
             </select> 
+            <h1 className="font-serif">entries</h1>
             </div>
             <div>
             <p className=" text-[#505050] font-[500] mr-10">
