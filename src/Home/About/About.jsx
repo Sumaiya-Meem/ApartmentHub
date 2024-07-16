@@ -1,6 +1,6 @@
 import { Parallax } from "react-parallax";
 import about1 from "../../../public/about1.jpg";
-
+import img from "../../../public/1.png"
 import { FaLocationDot } from "react-icons/fa6";
 import Aos from "aos";
 import 'aos/dist/aos.css'
@@ -40,7 +40,8 @@ const About = () => {
         </div>
       </Parallax>
      
-        <div className="mt-10 space-y-5 ml-10">
+        <div className="mt-10 space-y-5 ml-4 flex flex-col lg:flex-row gap-9">
+          <div className="space-y-3">
           <h1 className="text-xl font-serif font-bold text-gray-800">
             ApartmentHub: Your Premier Living Destination
           </h1>
@@ -79,6 +80,28 @@ const About = () => {
           Discover the epitome of modern living at ApartmentHub. Whether you seek comfort, style, or convenience, ApartmentHub offers it all. Come, be a part of our thriving community
            and experience urban living like never before.
           </p>
+          </div>
+          <div className="relative hidden lg:block">
+            <img src={img} alt="" className="h-[400px] w-[500px]" />
+            <div className="bg-[#3b3b3bb3] absolute w-full -mt-[79px] h-[80px] text-white font-serif " data-aos="fade-left" data-aos-easing="linear"
+     data-aos-duration="500">
+              <div data-aos="fade-left" data-aos-easing="linear"
+     data-aos-duration="1500"><h1 className="ml-3 text-lg mt-2">3 Bedroom 2 Bathroom</h1>
+              <p className="ml-3 mb-1">225 Square Maters</p>
+              <div className="h-[2px] bg-white w-[35%] ml-3"></div>
+              </div>
+            </div>
+            <div className="bg-[#c4b9db] rounded-sm absolute right-5 -mt-[147px] py-2 px-3" data-aos="fade-left" data-aos-easing="linear"
+     data-aos-duration="1500">
+              <h1 className="text-2xl text-[#8f5d89] font-medium font-[Playwrite HR Lijeva]">Apartment</h1>
+              <div data-aos="fade-left" data-aos-easing="linear"
+     data-aos-duration="1800"><h1 className="font-serif">For Rent</h1>
+              <div className="h-[2px] bg-white w-[65%] ml-1 mb-1"></div>
+              <p className="text-[10px]">Auralia Taurioum City Center</p>
+              <p className="text-[10px] mb-2">Mirpur 10</p>
+              <button className="bg-[#8f5d89] rounded-md text-white p-1">$15800/Month</button></div>
+            </div>
+          </div>
 
         </div>
       </div>

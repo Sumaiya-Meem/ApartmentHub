@@ -4,6 +4,7 @@ import Coupon from "./Coupon/Coupon";
 import Location from "./Location/Location";
 import Slider from "./Slider/Slider";
 import NewsletterModal from './NewsletterModal';
+import Newsletter from './Newsletter';
 
 const Home = () => {
     const [showModal, setShowModal] = useState(false);
@@ -27,6 +28,7 @@ const Home = () => {
             <Coupon />
             <Location />
             <NewsletterModal show={showModal} onClose={closeModal} />
+            <Newsletter></Newsletter>
         </div>
     );
 };
