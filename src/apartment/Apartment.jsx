@@ -27,7 +27,7 @@ const Apartment = () => {
   }, [axiosPublic, currentPage, perPage]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/apartment-count")
+    fetch("https://apartment-hub-server.vercel.app/apartment-count")
       .then((res) => res.json())
       .then((data) => setResult(data.result));
   }, []);

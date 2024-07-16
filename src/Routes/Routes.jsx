@@ -45,7 +45,7 @@ import UpdateApartment from "../Dashboard/profiles/UpdateApartment";
       {
         path: 'apartment/apartmentDetails/:id',
         element: <SingleApartment></SingleApartment>,
-        loader:({params})=>fetch(`http://localhost:5000/apartment/${params.id}`)
+        loader:({params})=>fetch(`https://apartment-hub-server.vercel.app/apartment/${params.id}`)
     },
       {
         path: 'localview',
@@ -121,7 +121,7 @@ import UpdateApartment from "../Dashboard/profiles/UpdateApartment";
       {
         path: 'updateApartment/:id',
         element: <AdminPrivate><UpdateApartment></UpdateApartment></AdminPrivate>,
-        loader: ({ params }) => fetch(`http://localhost:5000/apartment/${params.id}`)
+        loader: ({ params }) => fetch(`https://apartment-hub-server.vercel.app/apartment/${params.id}`)
       },
         {
           path: 'make-announce',

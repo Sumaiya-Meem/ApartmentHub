@@ -1,13 +1,23 @@
 import { FaLocationArrow } from 'react-icons/fa';
 import './NewsletterModal.css';
-
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 // eslint-disable-next-line react/prop-types
 const NewsletterModal = ({ show, onClose }) => {
-  if (!show) return null;
+
+  useEffect(()=> {
+    Aos.init()     
+},[])
+
+  if (!show) {return null;}
+  
+ 
 
   return (
-    <div className=" w-[400px]  md:w-[600px] mx-auto mt-20 mb-5 p-6 rounded space-y-2 modal-overlay ">
-      <div className="modal-content">
+    <div className=" w-[400px]  md:w-[600px] mx-auto mt-20 mb-5 p-6 rounded space-y-2 modal-overlay " >
+      <div className="modal-content" data-aos="zoom-in" 
+    data-aos-duration="1000">
         <button className="modal-close " onClick={onClose}>x</button>
         <h1 className="text-xl lg:text-2xl font-semibold mt-5">Subscribe to Apartment Hub Newsletter</h1> 
              <h1 className="my-3">Get the latest news & updates</h1>  
